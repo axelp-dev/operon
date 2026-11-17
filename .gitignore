@@ -1,0 +1,4 @@
+# Operon ignored files 
+
+# --- Python Environment ---
+.venv 
