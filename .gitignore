@@ -2,7 +2,8 @@
 
 # --- Python Environment ---
 .venv 
-
+/**/__pycache__
+pyrightconfig.json
 
 # --- Data --- 
 data/ 
