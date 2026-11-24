@@ -9,6 +9,7 @@ from src.state import FetchState
 from src.tools import (
     build_anchored_queries,
     download_pmc_assets,
+    generate_llm_queries,
     parse_article,
     search_europe_pmc,
     search_ncbi_pubmed,
@@ -178,6 +179,18 @@ def node_build_queries(state: FetchState) -> dict:
     return {"next_queries": queries, "new_articles": [], "n_iter": new_n_iter}
 
 
+def node_build_queries_llm(state: FetchState) -> dict:
+    print("[Query] Building queries with LLM...")
+    new_queries = generate_llm_queries(
+        context=CONTEXT,
+        accepted_articles=state["new_articles"],
+        seen_queries=state["seen_queries"],
+        n_queries=3,
+    )
+    print(f"[Query] Generated {len(new_queries)} queries: {new_queries}")
+    return {"next_queries": state["next_queries"] + new_queries}
+
+
 def node_download(state: FetchState) -> dict:
     """Download both PDF and XML assets for filtered articles."""
     updated = []
@@ -216,11 +229,13 @@ def node_download(state: FetchState) -> dict:
 
 def route_after_filter(state: FetchState) -> str:
     """Decide to continue download of not"""
-    if len(state["new_articles"]) == 0:
-        # Stop downloading
-        print("[Stop] No new articles to download.")
-        return "end"
-    return "read"
+    if len(state["new_articles"]) > 0:
+        return "read"
+    if len(state["next_queries"]) > 0:
+        print("[Filter] 0 new articles, trying next queued query...")
+        return "search"
+    print("[Stop] No new articles and queue is empty.")
+    return "end"
 
 
 def route_after_indexing(state: FetchState) -> str:

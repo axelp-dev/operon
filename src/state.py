@@ -60,3 +60,12 @@ class ArticleMeta(BaseModel):
         "pending_filtering",  # Article just added to the current state
         "pending_parsing",  # Pending LLM parsing
     ] = "pending_filtering"
+
+
+class QueryBatch(BaseModel):
+    """Query format for query construction by local
+    LLM from extratected keyword"""
+
+    queries: list[str] = Field(
+        description="3 distinct Boolean search queries for Europe PMC targeting human population genetics of Madagascar."
+    )
