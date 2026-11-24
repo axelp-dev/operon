@@ -6,7 +6,7 @@ Operon is designed as a **decoupled, multi-stage research pipeline**. Rather tha
 
 Core design principles:
 
-1. **Local-First Inference:** All semantic filtering and query planning run locally via Ollama (`ChatOllama`) under strict memory (`num_ctx`) and latency (`timeout`) constraints.
+1. **Local-First Inference:** All semantic filtering and query planning run locally via Ollama (`ChatOllama`).
 2. **Metadata-Before-Assets:** Abstracts are scored (`0–5`) and filtered *before* triggering PDF/XML downloads.
 3. **Flat Cyclic State Machine:** Bibliographic exploration is modeled as a single-level **LangGraph `StateGraph`** operating in iterative search waves rather than recursive per-article sub-loops.
 4. **Provider Fault Tolerance:** External scientific APIs are abstracted behind uniform `ArticleMeta` schemas with sequential fallback (`Europe PMC -> NCBI PubMed -> OpenAlex`).
@@ -26,7 +26,6 @@ operon/
     └── nodes.py            # Deterministic LangGraph nodes & conditional routing functions
 ```
 
----
 
 ## 2. State Management (`src/state.py`)
 
@@ -39,7 +38,8 @@ operon/
 * `seen_queries` (`list[str]`): History of executed queries used to prevent duplicate API calls.
 * `raw_candidates` (`list[dict]`): Transient buffer holding raw `ArticleMeta` dicts from the current search wave.
 * `new_articles` (`list[dict]`): Filtered candidates currently undergoing evaluation and indexing.
-* `n_iter` (`int`) / `max_iter` (`int`): Wave counters bounding graph execution.
+* `n_iter` (`int`) / `max_iter` (`int`): Wave counters for graph execution.
+* `max_ter` (`int`): Max number of graph execution. 
 
 ### Domain Schemas (Pydantic v2)
 
@@ -51,15 +51,34 @@ operon/
 
 ## 3. Control Flow & LangGraph Topology (`main.py` & `src/nodes.py`)
 
+Operon `library` module works as a LangGraph loop which iterate on queries and stop when the `max_iter` number is reached or when there's no new queries to fetch. 
+
 ```text
-┌──────────────────────────────────────────┐
-                       ▼                                          │
-[START] ──► (search) ──► (filter) ──[has new]──► (read) ──► (save_index)
-                            │                                     │
-                      [0 new articles]                      [n_iter < max_iter]
-                            │                                     ▼
-                            ▼                             (generate_queries)
-                          [END] ◄──[no queries left]──────────────┘
+[START]
+   │
+   ▼
+(search) ◄───────────[n_ter != max_iter]────────────────┐
+   │                                                    │
+   ▼                                                    │
+(filter) ──[0 new]──► [next_queries == 0 ?] ──(no)──────┤
+   │                        │                           │
+[has new]                 (yes)                         │
+   │                        │                           │
+   ▼                        ▼                           │
+(read)                    [END]                         │
+   │                        ▲                           │
+   ▼                        │                           │
+(save_index)                │                           │
+   │                        │                           │
+   ▼                        │                           │
+[n_iter >= max_iter ?] ──(yes)                          │
+   │                        ▲                           │
+  (no)                      │                           │
+   │                        │                           │
+   ▼                        │                           │
+(build_queries) ──[0 queries]                           │
+   │                                                    │
+[has queries] ──────────────────────────────────────────┘
 ```
 
 ### Nodes
@@ -68,13 +87,14 @@ operon/
 2. **`filter` (`node_filter_existing_articles`)**: Loads `data/index.json` and discards any candidate whose `pmid` is already indexed, flushing `raw_candidates` into `new_articles`.
 3. **`read` (`node_read_articles`)**: Invokes `parse_article()` on each candidate in `new_articles`. Articles scoring `>= 3` have their serialized `ArticleEvaluation` attached and are kept; lower-scoring articles (e.g., non-human ecology, veterinary studies) are dropped.
 4. **`save_index` (`node_save_index`)**: Upserts accepted `ArticleMeta` records into `data/index.json` keyed by `pmid`.
-5. **`generate_queries` (`node_build_queries`)**: Synthesizes new geographically anchored Boolean queries from the top-scoring articles/keywords of the current wave, deduplicating against `seen_queries`.
+5. `generate_queries` (`node_generate_queries_llm`): Use local LLM to build new queries from extracted articles keywords (an old deterministic version uses top articles rankind coupled to geographic anchor (an old deterministic version uses top articles rankind coupled to geographic anchors).
+
 
 ### Conditional Routers
 
-* **`route_after_filter`**: Short-circuits to `END` if `new_articles` is empty, avoiding wasted LLM inference cycles.
+* **`route_after_filter`**: Short-circuits to `END` if `new_articles` is empty and there's no new queries to fetch. Otherwise branch the graph on `read` or `search`. 
 * **`route_after_indexing`**: Terminates at `END` once `n_iter >= max_iter`, otherwise transitions to `generate_queries`.
-* **`route_after_queries`**: Guards against empty query queues (`len(next_queries) == 0`) before looping back to `search`.
+* **`route_after_building_queries`**: Guards against empty query queues (`len(next_queries) == 0`) before looping back to `search`.
 
 ---
 
