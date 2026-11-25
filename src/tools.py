@@ -2,6 +2,7 @@
 #                   TOOLS
 # ==========================================================
 
+import json
 import random
 import xml.etree.ElementTree as ET
 from pathlib import Path
@@ -11,7 +12,7 @@ import httpx
 from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_core.tools import tool
 
-from src.config import HEADERS
+from src.config import HEADERS, DATA_DIR
 from src.models import qwen_llm, qwen_llm_25
 from src.state import ArticleEvaluation, ArticleMeta, QueryBatch
 
@@ -27,6 +28,15 @@ STOP_KEYWORDS = {
     "local adaptation",
     "ecological niche modeling",
 }
+
+
+def _load_json_databse(db_path: Path) -> dict:
+    """Load json database from given path"""
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
+    index = {}
+    if db_path.exists():
+        index = json.loads(db_path.read_text(encoding="utf-8"))
+    return index
 
 
 def build_anchored_queries(

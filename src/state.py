@@ -16,6 +16,7 @@ class FetchState(TypedDict):
     # Articles containers
     raw_candidates: list[dict]
     new_articles: list[dict]
+    rejected_articles: list[dict]
 
     # Iterations management
     n_iter: int

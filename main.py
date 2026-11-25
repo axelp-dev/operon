@@ -63,6 +63,7 @@ if __name__ == "__main__":
             "seen_queries": [],
             "raw_candidates": [],
             "new_articles": [],
+            "rejected_articles": [],
             "n_iter": 1,
             "max_iter": 5,
         }

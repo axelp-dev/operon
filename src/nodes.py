@@ -4,10 +4,11 @@
 
 import json
 
-from src.config import CONTEXT, DATA_DIR, INDEX_PATH
+from src.config import CONTEXT, HISTORY_PATH, INDEX_PATH
 from src.logger import log
 from src.state import FetchState
 from src.tools import (
+    _load_json_databse,
     build_anchored_queries,
     download_pmc_assets,
     generate_llm_queries,
@@ -66,15 +67,14 @@ def node_filter_existing_articles(state: FetchState) -> dict:
     """
 
     # --- Load JSON database ---
-    DATA_DIR.mkdir(parents=True, exist_ok=True)
-    existing_index = {}
-    if INDEX_PATH.exists():
-        existing_index = json.loads(INDEX_PATH.read_text(encoding="utf-8"))
+    # index.json -> saved articles
+    index = _load_json_databse(INDEX_PATH)
+    history = _load_json_databse(HISTORY_PATH)
 
     # --- Create new_items dict ---
     new_items = []
     for art in state["raw_candidates"]:
-        if art["pmid"] not in existing_index:
+        if art["pmid"] not in index and art["pmid"] not in history:
             art["status"] = "pending_parsing"
             new_items.append(art)
     log.filter(
@@ -90,6 +90,7 @@ def node_read_articles(state: FetchState) -> dict:
     log.read(f"Starting reading {len(state['new_articles'])} articles...")
 
     accepted_articles = []
+    rejected_articles = []
     # Call model for all pending_parsing articles
     total = len(state["new_articles"])
     for i, art in enumerate(state["new_articles"], start=1):
@@ -111,27 +112,41 @@ def node_read_articles(state: FetchState) -> dict:
                 art["status"] = "accepted_pending_download"
                 # Append the article to saved ones
                 accepted_articles.append(art)
+            else:
+                art["evaluation"] = eval.model_dump()
+                art["status"] = "rejected"
+                rejected_articles.append(art)
 
-    return {"new_articles": accepted_articles}
+    return {"new_articles": accepted_articles, "rejected_articles": rejected_articles}
 
 
 def node_save_index(state: FetchState) -> dict:
-    """Save new_articles into index.json database"""
+    """
+    Save new_articles into index.json database
+    & puh 'rejected_articles' into history.json to prevent
+    future parsings
+    """
 
     # --- Load JSON database ---
-    DATA_DIR.mkdir(parents=True, exist_ok=True)
-    index = {}
-    if INDEX_PATH.exists():
-        index = json.loads(INDEX_PATH.read_text(encoding="utf-8"))
+    index = _load_json_databse(INDEX_PATH)
+    history = _load_json_databse(HISTORY_PATH)
 
     # --- Save articles ---
     for art in state["new_articles"]:
         index[art["pmid"]] = art
 
+    for art in state["rejected_articles"]:
+        history[art["pmid"]] = art
+
     INDEX_PATH.write_text(
         json.dumps(index, indent=2, ensure_ascii=False), encoding="utf-8"
     )
-    log.index(f"Saved ({len(index)} articles in {INDEX_PATH})")
+    HISTORY_PATH.write_text(
+        json.dumps(history, indent=2, ensure_ascii=False), encoding="utf-8"
+    )
+
+    log.index(f"Saved {len(index)} accepted articles in {INDEX_PATH}")
+    log.index(f"Saved {len(history)} rejected articles in {HISTORY_PATH}")
     return {}
 
 

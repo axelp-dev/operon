@@ -6,6 +6,7 @@ DATA_DIR = Path("data")
 PDF_DIR = DATA_DIR / "pdf"
 XML_DIR = DATA_DIR / "xml"
 INDEX_PATH = DATA_DIR / "index.json"
+HISTORY_PATH = DATA_DIR / "history.json"
 
 HEADERS = {"User-Agent": "OperonBiblioBot/0.1 (mailto:contact@operon.local)"}
 

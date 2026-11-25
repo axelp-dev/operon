@@ -9,6 +9,9 @@
 
 ### Added
 
+- Use new `data/history.json` database for rejected articles saving. 
+  - Load `history.json` while filtering articles to prevent unnecessary llm calls.
+  - Save `history.json` with LLM rejected articles while indexing database. 
 - `OperonLogger::reading_progres()` and `OperonLogger::article()` for fancy article readning progress display. 
 - Branch LLM on query generation from extracted keywords. 
 - First working LangGraph loop.
