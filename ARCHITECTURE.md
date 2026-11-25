@@ -10,95 +10,105 @@ Core design principles:
 2. **Metadata-Before-Assets:** Abstracts are scored (`0–5`) and filtered *before* triggering PDF/XML downloads.
 3. **Flat Cyclic State Machine:** Bibliographic exploration is modeled as a single-level **LangGraph `StateGraph`** operating in iterative search waves rather than recursive per-article sub-loops.
 4. **Provider Fault Tolerance:** External scientific APIs are abstracted behind uniform `ArticleMeta` schemas with sequential fallback (`Europe PMC -> NCBI PubMed -> OpenAlex`).
+5. **Persistent Deduplication:** Both accepted articles (`data/index.json`) and rejected candidates (`data/history.json`) are persisted across runs to prevent redundant LLM evaluations.
 
-```text
-operon/
-├── main.py                 # LangGraph state graph assembly & execution entry point
-├── data/                   # Persistent local storage (ignored by Git)
-│   ├── index.json          # Curated metadata & LLM evaluations keyed by PMID
-│   ├── pdf/                # Downloaded Open Access full-text PDFs
-│   └── xml/                # Downloaded JATS XML articles
-└── src/
-    ├── config.py           # Paths, HTTP headers, and domain research context
-    ├── state.py            # TypedDict FetchState & Pydantic schemas (ArticleMeta, ArticleEvaluation)
-    ├── models.py           # Local Ollama ChatOllama client configuration
-    ├── tools.py            # Search APIs (Europe PMC, NCBI, OpenAlex), LLM parser, query builder, asset downloader
-    └── nodes.py            # Deterministic LangGraph nodes & conditional routing functions
+```text 
+.
+├── ARCHITECTURE.md
+├── CHANGELOG.md
+├── data
+│   ├── history.json
+│   ├── index.json
+│   └── operon.log
+├── langgraph.json
+├── main.py
+├── README.md
+├── requirements.txt
+└── src
+    ├── __init__.py
+    ├── config.py
+    ├── library
+    │   ├── graphs.py
+    │   ├── llm_tasks.py
+    │   ├── nodes.py
+    │   ├── providers.py
+    │   ├── state.py
+    │   └── storage.py
+    ├── logger.py
+    └── models.py
 ```
 
+### Transverse Modules (`src/`)
 
-## 2. State Management (`src/state.py`)
+- **`src/config.py`**: Centralizes filesystem paths (`DATA_DIR`, `INDEX_PATH`, `HISTORY_PATH`), HTTP `HEADERS`, and the research `CONTEXT` prompt.
+- **`src/models.py`**: Configures local `ChatOllama` model instances (`qwen_llm`, `qwen_llm_25`) with bounded context windows (`num_ctx`) and timeouts.
+- **`src/logger.py`**: Provides a singleton `OperonLogger` (`log`) with scope-aligned ANSI console formatting (`SEARCH`, `FILTER`, `READ`, `INDEX`, `QUERY`, `WARN`, `INFO`), single-line progress updates (`\r`) during LLM evaluation, and full `DEBUG`-level file logging (`data/operon.log`).
+
+## 2. State Management (`src/library/state.py`)
 
 ### Graph State (`FetchState`)
 
 `FetchState` is an immutable `TypedDict` passed across nodes. Each node returns partial dictionary updates rather than mutating state lists in place:
 
-* `max_results` (`int`): Maximum candidates fetched per provider query.
-* `next_queries` (`list[str]`): FIFO queue of pending Boolean search queries.
-* `seen_queries` (`list[str]`): History of executed queries used to prevent duplicate API calls.
-* `raw_candidates` (`list[dict]`): Transient buffer holding raw `ArticleMeta` dicts from the current search wave.
-* `new_articles` (`list[dict]`): Filtered candidates currently undergoing evaluation and indexing.
-* `n_iter` (`int`) / `max_iter` (`int`): Wave counters for graph execution.
-* `max_ter` (`int`): Max number of graph execution. 
+- `max_results` (`int`): Maximum candidates fetched per provider query.
+- `next_queries` (`list[str]`): FIFO queue of pending Boolean search queries.
+- `seen_queries` (`list[str]`): History of executed queries used to prevent duplicate API calls within a session.
+- `raw_candidates` (`list[dict]`): Transient buffer holding raw `ArticleMeta` dicts from the current search wave.
+- `new_articles` (`list[dict]`): Filtered candidates currently undergoing evaluation and indexing.
+- `rejected_articles` (`list[dict]`): Transient buffer of articles rejected (`score < 3`) during the current wave before persistence to `data/history.json`.
+- `n_iter` (`int`) / `max_iter` (`int`): Wave counters bounding graph execution.
 
 ### Domain Schemas (Pydantic v2)
 
-* **`ArticleMeta`**: Canonical representation of a scientific paper (`pmid`, `pmcid`, `doi`, `title`, `year`, `abstract`, `status`, `pdf_path`, `xml_path`, `evaluation`).
-* **`ArticleEvaluation`**: Structured LLM output schema. Fields are intentionally ordered **`reasoning` -> `keywords` -> `score`** so small local models (3B–4B) articulate domain relevance *before* committing to an integer score (`0–5`).
-* **`QueryBatch`**: Structured output schema used when delegating Boolean query synthesis to the LLM.
+- **`ArticleMeta`**: Canonical representation of a scientific paper (`pmid`, `pmcid`, `doi`, `title`, `year`, `abstract`, `pdf_path`, `xml_path`, `evaluation`, and pipeline `status` tracking lifecycle transitions from `pending_filtering` / `pending_parsing` to `accepted_pending_download`, `rejected`, `no_content`, or `pending_parse`).
+- **`ArticleEvaluation`**: Structured LLM output schema. Fields are intentionally ordered **`reasoning` -> `keywords` -> `score`** so small local models (3B–4B) articulate domain relevance *before* committing to an integer score (`0–5`).
+- **`QueryBatch`**: Structured output schema used when delegating Boolean query synthesis to the LLM.
 
----
+## 3. Control Flow & LangGraph Topology (`src/library/graphs.py` & `src/library/nodes.py`)
 
-## 3. Control Flow & LangGraph Topology (`main.py` & `src/nodes.py`)
-
-Operon `library` module works as a LangGraph loop which iterate on queries and stop when the `max_iter` number is reached or when there's no new queries to fetch. 
+The `library` module executes as a cyclic LangGraph state machine (`build_search_graph()`) that iterates across query waves until `max_iter` is reached or the query queue is exhausted.
 
 ```text
 [START]
    │
    ▼
-(search) ◄───────────[n_ter != max_iter]────────────────┐
+(search) ◄──────────────────────────────────────────────┐
    │                                                    │
    ▼                                                    │
-(filter) ──[0 new]──► [next_queries == 0 ?] ──(no)──────┤
-   │                        │                           │
-[has new]                 (yes)                         │
-   │                        │                           │
-   ▼                        ▼                           │
-(read)                    [END]                         │
-   │                        ▲                           │
-   ▼                        │                           │
-(save_index)                │                           │
-   │                        │                           │
-   ▼                        │                           │
+(filter: index.json + history.json)                     │
+   │                                                    │
+   ├──[0 new]──► [next_queries == 0 ?] ──(no)───────────┤
+   │                   │                                │
+[has new]            (yes)                              │
+   │                   │                                │
+   ▼                   ▼                                │
+(read)               [END]                              │
+   │                   ▲                                │
+   ▼                   │                                │
+(save: index.json + history.json)                       │
+   │                   │                                │
+   ▼                   │                                │
 [n_iter >= max_iter ?] ──(yes)                          │
-   │                        ▲                           │
-  (no)                      │                           │
-   │                        │                           │
-   ▼                        │                           │
-(build_queries) ──[0 queries]                           │
+   │                   ▲                                │
+  (no)                 │                                │
+   │                   │                                │
+   ▼                   │                                │
+(build_queries: excl. history.json) ──[0 queries]───────┘
    │                                                    │
 [has queries] ──────────────────────────────────────────┘
 ```
 
-### Nodes
+### Nodes (`src/library/nodes.py`)
 
-1. **`search` (`node_search`)**: Pops `next_queries[0]`, queries scientific providers with automatic fallback, populates `raw_candidates`, and increments `n_iter`.
-2. **`filter` (`node_filter_existing_articles`)**: Loads `data/index.json` and discards any candidate whose `pmid` is already indexed, flushing `raw_candidates` into `new_articles`.
-3. **`read` (`node_read_articles`)**: Invokes `parse_article()` on each candidate in `new_articles`. Articles scoring `>= 3` have their serialized `ArticleEvaluation` attached and are kept; lower-scoring articles (e.g., non-human ecology, veterinary studies) are dropped.
-4. **`save_index` (`node_save_index`)**: Upserts accepted `ArticleMeta` records into `data/index.json` keyed by `pmid`.
-5. `generate_queries` (`node_generate_queries_llm`): Use local LLM to build new queries from extracted articles keywords (an old deterministic version uses top articles rankind coupled to geographic anchor (an old deterministic version uses top articles rankind coupled to geographic anchors).
+1. **`search` (`node_search`)**: Pops `next_queries[0]`, queries scientific providers with sequential fallback, populates `raw_candidates`, appends the query to `seen_queries`, and increments `n_iter`.
+2. **`filter` (`node_filter_existing_articles`)**: Loads both `data/index.json` and `data/history.json` via `src/library/storage.py` (`_load_json_database`) and discards any candidate whose `pmid` already exists in either store, flushing `raw_candidates` into `new_articles`.
+3. **`read` (`node_read_articles`)**: Invokes `parse_article()` (`src/library/llm_tasks.py`) on each candidate in `new_articles`. Articles scoring `>= 3` are kept in `new_articles` (`status="accepted_pending_download"`), while lower-scoring articles are routed to `rejected_articles` (`status="rejected"`).
+4. **`save_index` (`node_save_index`)**: Upserts accepted `ArticleMeta` records into `data/index.json` and rejected records into `data/history.json` keyed by `pmid`.
+5. **`generate_queries` (`node_build_queries_llm`)**: Calls `generate_llm_queries()` (`src/library/llm_tasks.py`) to synthesize new broad Boolean queries (at most two `AND` clauses, no field prefixes) from top-scoring articles (`score >= 4`) while deduplicating against `seen_queries`.
+6. **`download` (`node_download`)**: Standalone node invoking `download_pmc_assets` for accepted articles with a `pmcid` (implemented in `nodes.py`, decoupled from the main search loop).
 
 
-### Conditional Routers
-
-* **`route_after_filter`**: Short-circuits to `END` if `new_articles` is empty and there's no new queries to fetch. Otherwise branch the graph on `read` or `search`. 
-* **`route_after_indexing`**: Terminates at `END` once `n_iter >= max_iter`, otherwise transitions to `generate_queries`.
-* **`route_after_building_queries`**: Guards against empty query queues (`len(next_queries) == 0`) before looping back to `search`.
-
----
-
-## 4. External Data Providers (`src/tools.py`)
+## 4. External Data Providers (`src/library/providers.py`)
 
 All search tools normalize heterogeneous API payloads into `ArticleMeta.model_dump()`:
 
@@ -108,7 +118,8 @@ All search tools normalize heterogeneous API payloads into `ArticleMeta.model_du
 | 2 | **NCBI PubMed** | `esearch.fcgi` + `efetch.fcgi` (XML) | Fallback on HTTP 503 / timeout; parses JATS/PubMed XML via `xml.etree.ElementTree`. |
 | 3 | **OpenAlex** | `https://api.openalex.org/works` (`filter=is_oa:true`) | High-availability fallback; reconstructs full abstracts from inverted word indices. |
 
-Full-text retrieval (`download_pmc_assets`) is implemented as a standalone tool targeting Europe PMC (`fullTextPDF` / `fullTextXML`) with an **Unpaywall API** fallback via DOI.
+
+Full-text retrieval (`download_pmc_assets`) is implemented as a standalone `@tool` accepting `pmid`, `pmcid`, `PDF_DIR`, `XML_DIR`, `HEADERS`, and optional `doi`, targeting Europe PMC (`fullTextPDF` / `fullTextXML`) with an **Unpaywall API** fallback via DOI.
 
 ---
 
@@ -116,7 +127,7 @@ Full-text retrieval (`download_pmc_assets`) is implemented as a standalone tool 
 
 Within the broader Operon architecture, `data/index.json` and `data/xml/` act as the **clean interface boundary** between the `library` module and downstream reasoning agents:
 
-1. **Module 1 (`library` — Current):** Queries biomedical APIs, executes the LangGraph semantic filtering and query expansion loop, and persists curated metadata and raw assets to `data/index.json` and `data/xml/`.
+1. **Module 1 (`library` — Current):** Queries biomedical APIs, executes the LangGraph semantic filtering and query expansion loop, and persists curated metadata (`data/index.json`) and rejection history (`data/history.json`).
 2. **Module 2 (`ingestion` — Planned):** Consumes `data/index.json` and parses JATS XML / PDF files into structured section-level chunks (Methods, Cohorts, Bioinformatic Tools) stored in a vector/structured database.
 3. **Module 3 (`synthesis` — Planned):** Downstream reasoning agents query the ingested knowledge base to recommend statistical methods and bioinformatic pipelines for Malagasy human population genomic datasets.
 

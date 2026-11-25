@@ -5,18 +5,16 @@
 import json
 
 from src.config import CONTEXT, HISTORY_PATH, INDEX_PATH
-from src.logger import log
-from src.state import FetchState
-from src.tools import (
-    _load_json_databse,
-    build_anchored_queries,
+from src.library.llm_tasks import generate_llm_queries, parse_article
+from src.library.providers import (
     download_pmc_assets,
-    generate_llm_queries,
-    parse_article,
     search_europe_pmc,
     search_ncbi_pubmed,
     search_openalex,
 )
+from src.library.state import FetchState
+from src.library.storage import _load_json_database
+from src.logger import log
 
 # --- NODES -------------------------------
 
@@ -68,8 +66,8 @@ def node_filter_existing_articles(state: FetchState) -> dict:
 
     # --- Load JSON database ---
     # index.json -> saved articles
-    index = _load_json_databse(INDEX_PATH)
-    history = _load_json_databse(HISTORY_PATH)
+    index = _load_json_database(INDEX_PATH)
+    history = _load_json_database(HISTORY_PATH)
 
     # --- Create new_items dict ---
     new_items = []
@@ -128,8 +126,8 @@ def node_save_index(state: FetchState) -> dict:
     """
 
     # --- Load JSON database ---
-    index = _load_json_databse(INDEX_PATH)
-    history = _load_json_databse(HISTORY_PATH)
+    index = _load_json_database(INDEX_PATH)
+    history = _load_json_database(HISTORY_PATH)
 
     # --- Save articles ---
     for art in state["new_articles"]:
@@ -148,57 +146,6 @@ def node_save_index(state: FetchState) -> dict:
     log.index(f"Saved {len(index)} accepted articles in {INDEX_PATH}")
     log.index(f"Saved {len(history)} rejected articles in {HISTORY_PATH}")
     return {}
-
-
-def node_build_queries(state: FetchState) -> dict:
-    """Build new queries from articles parsing using
-    extracted keytwords"""
-
-    log.query("Building queries...")
-
-    # --- Build Keywords Score Dict ---
-    articles_keywords = {}
-    for art in state["new_articles"]:
-        # Get article info
-        if art["evaluation"] is not None:
-            keywords = art["evaluation"]["keywords"]
-            art_score = art["evaluation"]["score"]
-        else:
-            continue
-        # Append keywords to keywords_dict
-        for w in keywords:
-            if w in articles_keywords:
-                # Adding word scores
-                articles_keywords[w] += art_score
-            else:
-                # Simply add it with current score
-                articles_keywords[w] = art_score
-
-    # --- Build new queries ---
-    # Delete low-score keywords
-    filtered_keywords = {
-        w.strip().lower(): articles_keywords[w]
-        for w in articles_keywords
-        if articles_keywords[w] >= 3
-    }
-    sorted_kw = dict(
-        sorted(filtered_keywords.items(), key=lambda item: item[1], reverse=True)
-    )
-
-    log.debug(scope="DEBUG", msg="Keywords : {sorted_kw}")
-
-    new_queries = build_anchored_queries(
-        sorted_keywords=sorted_kw,
-        seen_queries=set(state["seen_queries"]),
-        top_pool_size=12,  # Get best 12 keywords
-        n_queries=3,  # Generates 3 requests
-        keywords_per_query=2,  # Use 2 words per requests
-    )
-    # Appending queries to pending ones
-    queries = state["next_queries"] + new_queries
-    # Update n_iter at the end of the loop
-    new_n_iter = state["n_iter"] + 1
-    return {"next_queries": queries, "new_articles": [], "n_iter": new_n_iter}
 
 
 def node_build_queries_llm(state: FetchState) -> dict:

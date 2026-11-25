@@ -10,6 +10,19 @@ HISTORY_PATH = DATA_DIR / "history.json"
 
 HEADERS = {"User-Agent": "OperonBiblioBot/0.1 (mailto:contact@operon.local)"}
 
+GEO_ANCHOR = "(TITLE:Madagascar OR ABSTRACT:Madagascar OR TITLE:Malagasy OR ABSTRACT:Malagasy OR TITLE:Africa OR ABSTRACT:Africa)"
+STOP_KEYWORDS = {
+    "madagascar",
+    "malagasy",
+    "africa",
+    "population",
+    "genetics",
+    "genomics",
+    "climate change",
+    "local adaptation",
+    "ecological niche modeling",
+}
+
 CONTEXT = """
 You are evaluating scientific abstracts for a research project on human population genetics and the genetic origins of Madagascar (Austronesian and Bantu admixture, Indian Ocean migrations, human population genomics methods).
 

@@ -19,4 +19,6 @@
 
 ### Changed
 
+- `library` architecture refactorign using `src/library` folder & dispatch `tool.py` functions into more specific files. 
+
 ### Fixed

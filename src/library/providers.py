@@ -1,114 +1,45 @@
-# ==========================================================
-#                   TOOLS
-# ==========================================================
+"""
+Web searching providers
+"""
 
-import json
-import random
 import xml.etree.ElementTree as ET
 from pathlib import Path
-from typing import cast
 
 import httpx
-from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_core.tools import tool
 
-from src.config import HEADERS, DATA_DIR
-from src.models import qwen_llm, qwen_llm_25
-from src.state import ArticleEvaluation, ArticleMeta, QueryBatch
+from src.config import HEADERS
+from src.library.state import ArticleMeta
 
-GEO_ANCHOR = "(TITLE:Madagascar OR ABSTRACT:Madagascar OR TITLE:Malagasy OR ABSTRACT:Malagasy OR TITLE:Africa OR ABSTRACT:Africa)"
-STOP_KEYWORDS = {
-    "madagascar",
-    "malagasy",
-    "africa",
-    "population",
-    "genetics",
-    "genomics",
-    "climate change",
-    "local adaptation",
-    "ecological niche modeling",
-}
+# --- HERLPERS -------------------------------
 
 
-def _load_json_databse(db_path: Path) -> dict:
-    """Load json database from given path"""
-    DATA_DIR.mkdir(parents=True, exist_ok=True)
-    index = {}
-    if db_path.exists():
-        index = json.loads(db_path.read_text(encoding="utf-8"))
-    return index
+def _reconstruct_openalex_abstract(inverted_index: dict | None) -> str:
+    """Reconstruit le texte de l'abstract depuis l'index inversé OpenAlex."""
+    if not inverted_index:
+        return ""
+    words = {}
+    for word, positions in inverted_index.items():
+        for pos in positions:
+            words[pos] = word
+    return " ".join(words[i] for i in sorted(words.keys()))
 
 
-def build_anchored_queries(
-    sorted_keywords: dict[str, float],
-    seen_queries: set[str],
-    top_pool_size: int = 12,
-    n_queries: int = 3,
-    keywords_per_query: int = 2,
-) -> list[str]:
-    """
-    Draw random keywords from best scored one and generates
-    queries for Eurome PMC with geographic anchor.
-    """
-    # --- Filter generic keywords ---
-    candidates = [
-        kw.strip()
-        for kw in sorted_keywords.keys()
-        if kw.strip().lower() not in STOP_KEYWORDS and len(kw.strip()) > 2
-    ][:top_pool_size]
-
-    if not candidates:
-        return []
-
-    # --- Generate queries ---
-    queries: list[str] = []
-    attempts = 0
-    max_attempts = n_queries * 5
-
-    while len(queries) < n_queries and attempts < max_attempts:
-        attempts += 1
-        # Get 1  or 2 words from the pool
-        k = min(keywords_per_query, len(candidates))
-        picked = sorted(random.sample(candidates, k=k))
-
-        # Boolean formatting : ("kw1" AND "kw2") AND (GEO_ANCHOR)
-        terms_clause = " AND ".join(f'"{kw}"' for kw in picked)
-        query = f"({terms_clause}) AND {GEO_ANCHOR}"
-
-        norm_query = query.lower()
-        if norm_query not in seen_queries:
-            seen_queries.add(norm_query)
-            queries.append(query)
-
-    return queries
+def _try_download_pdf(url: str, dest: Path, client: httpx.Client) -> bool:
+    """Helper interne pour télécharger un flux PDF valide."""
+    try:
+        with client.stream("GET", url, follow_redirects=True) as resp:
+            content_type = resp.headers.get("content-type", "").lower()
+            if resp.status_code == 200 and "application/pdf" in content_type:
+                with open(dest, "wb") as f:
+                    f.writelines(resp.iter_bytes())
+                return True
+    except httpx.HTTPError:
+        pass
+    return False
 
 
-def get_keywords_score(art: ArticleMeta) -> dict:
-    """Process keyword-score dictionnary using
-    ArticleScore and extracted keyword from an article"""
-    if art.evaluation is not None:
-        values = {w: art.evaluation.score for w in art.evaluation.keywords}
-    else:
-        values = {}
-    return values
-
-
-def parse_article(context: str, article_str: str) -> ArticleEvaluation:
-    """Parse article using Ollama and return ArticleEvaluation
-    object"""
-    # Devine output format - ArticleEvaluation
-    # evaluator_llm = qwen_llm.with_structured_output(ArticleEvaluation)
-    evaluator_llm = qwen_llm_25.with_structured_output(ArticleEvaluation)
-    # Build prompt using CONTEXT and article_str content
-    messages = [
-        SystemMessage(content=context),
-        HumanMessage(content=f"Evaluate this article metadata:\n{article_str[:3000]}"),
-    ]
-    # Call the llm
-    eval = evaluator_llm.invoke(messages)
-    if isinstance(eval, dict):
-        return ArticleEvaluation.model_validate(eval)
-    return cast(ArticleEvaluation, eval)
+# --- LANGGRAPH TOOLS -------------------------------
 
 
 @tool
@@ -221,17 +152,6 @@ def search_ncbi_pubmed(query: str, max_results: int = 10) -> list[dict]:
     return articles
 
 
-def _reconstruct_openalex_abstract(inverted_index: dict | None) -> str:
-    """Reconstruit le texte de l'abstract depuis l'index inversé OpenAlex."""
-    if not inverted_index:
-        return ""
-    words = {}
-    for word, positions in inverted_index.items():
-        for pos in positions:
-            words[pos] = word
-    return " ".join(words[i] for i in sorted(words.keys()))
-
-
 @tool
 def search_openalex(query: str, max_results: int = 10) -> list[dict]:
     """Search Open Access scientific articles via OpenAlex API."""
@@ -280,64 +200,6 @@ def search_openalex(query: str, max_results: int = 10) -> list[dict]:
         )
 
     return articles
-
-
-def _try_download_pdf(url: str, dest: Path, client: httpx.Client) -> bool:
-    """Helper interne pour télécharger un flux PDF valide."""
-    try:
-        with client.stream("GET", url, follow_redirects=True) as resp:
-            content_type = resp.headers.get("content-type", "").lower()
-            if resp.status_code == 200 and "application/pdf" in content_type:
-                with open(dest, "wb") as f:
-                    for chunk in resp.iter_bytes():
-                        f.write(chunk)
-                return True
-    except httpx.HTTPError:
-        pass
-    return False
-
-
-def generate_llm_queries(
-    context: str,
-    accepted_articles: list[dict],
-    seen_queries: list[str],
-    n_queries: int = 3,
-) -> list[str]:
-    """Asks LLM to build relevent queries from extracted keywords"""
-
-    summaries = [
-        f"- {art['title']} (keywords: {', '.join(art['evaluation']['keywords'])})"
-        for art in accepted_articles
-        if art.get("evaluation") and art["evaluation"]["score"] >= 4
-    ]
-    if not summaries:
-        summaries = [
-            f"- {art['title']}" for art in accepted_articles if art.get("evaluation")
-        ]
-    prompt = f"""Based on these relevant human genetics articles we just found:
-{chr(10).join(summaries[:8])}
-
-Generate {n_queries} broad Boolean search queries to discover MORE articles on human population genomics, admixture, and peopling history of Madagascar and the Indian Ocean.
-
-Rules:
-1. Do NOT use field prefixes like TITLE: or ABSTRACT:. Use plain terms with uppercase AND / OR.
-2. Keep queries broad using at most TWO AND-clauses: (Geography) AND (Genetics/Population terms).
-   Good example: (Madagascar OR Malagasy) AND (admixture OR Austronesian OR Bantu OR haplogroup)
-   Good example: ("Indian Ocean" OR Comoros OR Madagascar) AND ("population genomics" OR "human migration" OR IBD)
-3. Focus ONLY on human populations and genomics.
-4. Do NOT repeat these already executed queries: {seen_queries}
-"""
-    planner_llm = qwen_llm.with_structured_output(QueryBatch)
-    res = planner_llm.invoke(
-        [
-            SystemMessage(content=context),
-            HumanMessage(content=prompt),
-        ]
-    )
-    batch = QueryBatch.model_validate(res) if isinstance(res, dict) else res
-
-    seen_norm = {q.strip().lower() for q in seen_queries}
-    return [q.strip() for q in batch.queries if q.strip().lower() not in seen_norm]
 
 
 @tool

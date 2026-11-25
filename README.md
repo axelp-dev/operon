@@ -7,31 +7,41 @@
 
 ## Key Features (Library Module)
 
-* **Multi-Provider Resilient Search:** Queries **Europe PMC**, **NCBI PubMed (E-utilities)**, and **OpenAlex** with automatic failover against HTTP `503` errors and network timeouts.
-* **Local-First Semantic Evaluation:** Uses local Ollama models (`qwen2.5:3b` / `qwen3:4b`) with Pydantic structured outputs (`ArticleEvaluation`) to score abstracts (`0–5`) and reject non-human or off-topic studies before downloading heavy full-text files.
-* **Dynnamic Query Generation**: Generates new queries for web search using parsed keywords and LLM calls. 
-* **Zero-Duplication Indexing:** Deduplicates candidates against both session query history (`seen_queries`), persistent PMID storage (`data/index.json`).
-* **Deferred Asset Retrieval:** Supports downloading Open Access PDF and JATS XML full-text files (`PMID_<id>.pdf` / `PMID_<id>.xml`) with Unpaywall fallback once articles pass semantic screening.
+## Key Features (Library Module)
+
+- **Multi-Provider Resilient Search:** Queries **Europe PMC**, **NCBI PubMed (E-utilities)**, and **OpenAlex** with automatic failover against HTTP `503` errors and network timeouts.
+- **Local-First Semantic Evaluation:** Uses local Ollama models (`qwen2.5:3b` / `qwen3:4b`) with Pydantic structured outputs (`ArticleEvaluation`) to score abstracts (`0–5`) and reject non-human or off-topic studies before downloading heavy full-text files.
+- **Dynamic Query Generation:** Synthesizes new broad Boolean search queries using local LLM calls grounded on top-scoring articles and extracted keywords.
+- **Zero-Duplication Indexing & History:** Deduplicates candidates against session query history (`seen_queries`), persistent accepted storage (`data/index.json`), and persistent rejection cache (`data/history.json`).
+- **Deferred Asset Retrieval:** Supports downloading Open Access PDF and JATS XML full-text files (`PMID_<id>.pdf` / `PMID_<id>.xml`) with Unpaywall fallback once articles pass semantic screening.
+- **Structured Scoped Logging:** Provides color-coded, single-line console progress updates alongside full `DEBUG`-level execution logs in `data/operon.log`.
 
 ## Project Structure
 
 ```text
 .
+├── ARCHITECTURE.md
 ├── CHANGELOG.md
 ├── data
-│   └── index.json
-├── dev
-│   └── dev_models.py
+│   ├── history.json
+│   ├── index.json
+│   └── operon.log
+├── langgraph.json
 ├── main.py
 ├── README.md
 ├── requirements.txt
 └── src
+    ├── __init__.py
     ├── config.py
-    ├── edges.py
-    ├── models.py
-    ├── nodes.py
-    ├── state.py
-    └── tools.py
+    ├── library
+    │   ├── graphs.py
+    │   ├── llm_tasks.py
+    │   ├── nodes.py
+    │   ├── providers.py
+    │   ├── state.py
+    │   └── storage.py
+    ├── logger.py
+    └── models.py
 ```
 
 ## Prerequisites & Setup
@@ -59,4 +69,4 @@ Configure your seed query, iteration budget (`max_iter`), and batch size (`max_r
 python main.py
 ```
 
-Curated articles, evaluation scores, reasoning, and extracted keywords are incrementally saved to `data/index.json`.
+Curated articles, evaluation scores, reasoning, and extracted keywords are incrementally saved to `data/index.json`, while rejected candidates are cached in `data/history.json` to avoid redundant LLM evaluations across runs.
