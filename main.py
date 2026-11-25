@@ -1,5 +1,8 @@
+from pathlib import Path
+
 from langgraph.graph import END, START, StateGraph
 
+from src.logger import log
 from src.nodes import (
     node_build_queries_llm,
     node_filter_existing_articles,
@@ -11,6 +14,10 @@ from src.nodes import (
     route_after_indexing,
 )
 from src.state import FetchState
+
+# --- INIT LOGGER -------------------------------
+
+log.setup(log_file=Path("data/operon.log"))
 
 # --- BUILD GRAPH -------------------------------
 
