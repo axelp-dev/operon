@@ -8,11 +8,14 @@ from src.config import CONTEXT, HISTORY_PATH, INDEX_PATH
 from src.library.llm_tasks import generate_llm_queries, parse_article
 from src.library.providers import (
     download_pmc_assets,
+    get_references_europe_pmc,
+    get_references_ncbi_pubmed,
+    get_references_openalex,
     search_europe_pmc,
     search_ncbi_pubmed,
     search_openalex,
 )
-from src.library.state import FetchState
+from src.library.state import BaseLibraryState, FetchState, SnowballState
 from src.library.storage import _load_json_database
 from src.logger import log
 
@@ -24,6 +27,30 @@ SEARCH_PROVIDERS = [
     ("NCBI_PubMed", search_ncbi_pubmed),
     ("OpenAlex", search_openalex),
 ]
+
+
+REF_PROVIDERS = [
+    ("EuropePMC", lambda art: get_references_europe_pmc.invoke({"pmid": art["pmid"]})),
+    (
+        "NCBI_PubMed",
+        lambda art: get_references_ncbi_pubmed.invoke({"pmid": art["pmid"]}),
+    ),
+    (
+        "OpenAlex",
+        lambda art: get_references_openalex.invoke(
+            {"pmid": art["pmid"], "doi": art.get("doi")}
+        ),
+    ),
+]
+
+
+def node_fetch_refs(state: BaseLibraryState) -> dict:
+    """Get articles from current library and
+    extend it using cited references"""
+
+    # --- Step 1 : Get articles from actual librry ---
+
+    return {}
 
 
 def node_search(state: FetchState) -> dict:
@@ -58,7 +85,7 @@ def node_search(state: FetchState) -> dict:
     }
 
 
-def node_filter_existing_articles(state: FetchState) -> dict:
+def node_filter_existing_articles(state: BaseLibraryState) -> dict:
     """Filter existing articles in FetchState["raw_candidates"]
     and return only non existing articles.
     Modify state 'new_articles' list and re-init 'raw_candidates' one.
@@ -81,7 +108,7 @@ def node_filter_existing_articles(state: FetchState) -> dict:
     return {"new_articles": new_items, "raw_candidates": []}
 
 
-def node_read_articles(state: FetchState) -> dict:
+def node_read_articles(state: BaseLibraryState) -> dict:
     """Read all articles using Ollama model to retrieve
     methods, keywords and related articles"""
 
@@ -118,7 +145,7 @@ def node_read_articles(state: FetchState) -> dict:
     return {"new_articles": accepted_articles, "rejected_articles": rejected_articles}
 
 
-def node_save_index(state: FetchState) -> dict:
+def node_save_index(state: BaseLibraryState) -> dict:
     """
     Save new_articles into index.json database
     & puh 'rejected_articles' into history.json to prevent

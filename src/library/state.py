@@ -7,20 +7,7 @@ from typing import Literal, TypedDict
 from pydantic import BaseModel, Field
 
 
-class FetchState(TypedDict):
-    # Query params & storage
-    max_results: int
-    next_queries: list[str]
-    seen_queries: list[str]
-
-    # Articles containers
-    raw_candidates: list[dict]
-    new_articles: list[dict]
-    rejected_articles: list[dict]
-
-    # Iterations management
-    n_iter: int
-    max_iter: int
+# --- Article Evaluation -------------------------------
 
 
 class ArticleEvaluation(BaseModel):
@@ -36,6 +23,9 @@ class ArticleEvaluation(BaseModel):
         le=5,
         description="Relevance score from 0 (unrelated/non-human) to 5 (directly studies Malagasy human population genomics).",
     )
+
+
+# --- Article container -------------------------------
 
 
 class ArticleMeta(BaseModel):
@@ -60,6 +50,7 @@ class ArticleMeta(BaseModel):
     status: Literal[
         "pending_filtering",  # Article just added to the current state
         "pending_parsing",  # Pending LLM parsing
+        "accepted_pending_download",
     ] = "pending_filtering"
 
 
@@ -70,3 +61,56 @@ class QueryBatch(BaseModel):
     queries: list[str] = Field(
         description="3 distinct Boolean search queries for Europe PMC targeting human population genetics of Madagascar."
     )
+
+
+# --- LangGraph States -------------------------------
+
+"""
+Use heritency for the two graphs (fetch_graph & snowball_graph): 
+- BaseLibraryState - Mother-class 
+  |
+  -> FetchState used by fetch_graph 
+  |
+  -> SnownbalState used by snowball_graph 
+"""
+
+
+class BaseLibraryState(TypedDict):
+    """
+    Mother class for library LagGraphs
+    """
+
+    # --- Articles Containers ---
+    # Found articles - not parsed or indexed
+    raw_candidates: list[dict]
+    # Accepted articles -> to save in index.json
+    new_articles: list[dict]
+    # Rejected articles -> to save in history.json
+    rejected_articles: list[dict]
+
+
+class FetchState(BaseLibraryState):
+    # --- Query Management ---
+    # Max query results
+    max_results: int
+    # Next queries in the stack to fetch
+    next_queries: list[str]
+    seen_queries: list[str]
+
+    # Iterations management
+    n_iter: int
+    max_iter: int
+
+
+class SnowballState(BaseLibraryState):
+    # --- Config ---
+    # Min score for an article to search its references
+    min_score: int
+    # Number of minimal citations for a reference to be fetched
+    min_refs: int
+
+    # --- Containers ---
+    # Selected articles for references extention
+    selected_articles: list[ArticleMeta]
+    # References to fetch
+    raw_references: list[str]

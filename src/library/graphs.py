@@ -58,3 +58,21 @@ def build_search_graph() -> CompiledStateGraph:
 
     fetch_graph = builder.compile()
     return fetch_graph
+
+
+def build_snowball_graph() -> CompiledStateGraph:
+    """
+    Build a snowball search LangGraph object for
+    in-depth references exploration from existing
+    articles in library.
+    """
+
+    # Get high-scored articles in the library
+
+    # Feth their references
+
+    # Get most cited references
+
+    # filter -> read -> save index
+
+    raise NotImplementedError()
