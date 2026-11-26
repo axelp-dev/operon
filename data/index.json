@@ -1,0 +1,464 @@
+{
+  "41840917": {
+    "pmid": "41840917",
+    "pmcid": "PMC12993259",
+    "doi": "10.1111/mec.70299",
+    "title": "Combining Population Genomics With Ancient DNA to Understand Island Colonisation History of the Madagascar Turtle Dove.",
+    "year": 2026,
+    "abstract": "The Mascarene archipelago (Mauritius, Reunion and Rodrigues), characterised by first human arrival being recent, offers a unique setting to study species colonisation on a recent timescale, and contribution of past human interventions. Here we use a combination of modern and ancient DNA data as a case study to investigate the colonisation history of a species of concern in relation to conservation programmes-the Madagascar turtle dove (Nesoenas picturata) on Mauritius and Reunion. We generated a reference genome and re-sequenced genomes from contemporary N. picturata populations, as well as genome-wide data from relevant subfossils. A combination of model-free inferences, site frequency spectrum (SFS) based demographic modelling, and analyses of population structure including that of subfossils indicate that N. picturata colonised both islands independently and naturally from Madagascar, long before human arrival. Summary statistics and SFS-based modelling reveal large effective population sizes (Ne) and high genetic diversity in island populations, conflicting with historical accounts of human-induced demographic collapse. Based on goodness-of-fit, genetic structure and diversity indices do not discriminate between two best-fitting models, one of which posits large recent Ne and negligible translocation rates, while the other supports recent severe bottlenecks followed by high post-human translocation from Madagascar. Nonetheless, linkage disequilibrium provides stronger evidence for the latter scenario, which may also explain high genetic diversity. Both modern and ancient DNA data sources independently support the classification of N. picturata as native to both islands. Our findings highlight the potential of resolving colonisation history on timescales that have often been too recent for resolution, using a combination of different data sources, and by validating demographic models with multiple summary statistics.",
+    "pdf_path": null,
+    "xml_path": null,
+    "evaluation": {
+      "reasoning": "url",
+      "keywords": [
+        "turtle dove",
+        "Madagascar",
+        "ancient DNA",
+        "population genomics",
+        "colonisation history"
+      ],
+      "score": 3
+    },
+    "status": "accepted_pending_download"
+  },
+  "42256872": {
+    "pmid": "42256872",
+    "pmcid": "PMC13239544",
+    "doi": "10.1002/ece3.73664",
+    "title": "Not Just a Matter of Space: Integrating Ecological Niche Modeling With Genotype-Environment Associations Suggests High Maladaptation Risks Under Climate Change for a Microendemic Malagasy Frog.",
+    "year": 2026,
+    "abstract": "Climate change is impacting biodiversity worldwide at an accelerating pace. Traditionally, Ecological Niche Models (ENMs) have been widely used to infer the likely impacts of climate change on species, while accounting for their potential dispersal towards climatically suitable habitats. More recently, Genotype-environment association (GEA) approaches applied to genomic data have opened the possibility to investigate local adaptation underlying species' genetic adaptive capacity, allowing quantification of maladaptation risk under future climatic conditions. In this study, we integrate ENMs with GEAs to assess climate change impacts on <i>Mantidactylus bourgati</i>, a frog microendemic to the Andringitra Massif in southeastern Madagascar. ENMs forecasted a progressive decline in climatically suitable habitat that, depending on the climate change scenario, could lead to either complete extinction or a strong reduction and disjunct future distribution. GEA analyses suggested spatially structured genotype-environment associations consistent with local adaptation, with three distinct adaptive units associated with the wide environmental gradients characterizing the Andringitra Massif region. Genetic offset calculations suggested that even if <i>M. bourgati</i> may succeed in tracking suitable habitats through dispersal, the future genetic change required to maintain the same adaptation to current climatic conditions will be significant, implying a high risk of maladaptation. Moreover, most future refugial habitats are projected to fall outside Madagascar's network of protected areas. These findings emphasize the importance of integrating species' genetic adaptive capacity into conservation strategies and spatial planning to help mitigate future climate change impacts on biodiversity.",
+    "pdf_path": null,
+    "xml_path": null,
+    "evaluation": {
+      "reasoning": "The article integrates Ecological Niche Modeling (ENM) with Genotype-Environment Association (GEA) to assess climate change impacts on a microendemic Malagasy frog. This approach is relevant for understanding genetic adaptation and maladaptation risks under climate change. The study's focus on a specific Malagasy species and its microhabitat context makes it highly relevant for Madagascar's biodiversity and conservation efforts.",
+      "keywords": [
+        "Ecological Niche Modeling",
+        "Genotype-Environment Association",
+        "Climate Change",
+        "Local Adaptation",
+        "Protected Areas"
+      ],
+      "score": 4
+    },
+    "status": "accepted_pending_download"
+  },
+  "38177203": {
+    "pmid": "38177203",
+    "pmcid": "PMC10766636",
+    "doi": "10.1038/s41598-023-50708-x",
+    "title": "Origin and spatial population structure of Malagasy native chickens based on mitochondrial DNA.",
+    "year": 2024,
+    "abstract": "Since Malagasy human culture became established in a multi-layered way by genetic admixture of Austronesian (Indonesia), Bantu (East Africa) and West Asian populations, the Malagasy native livestock should also have originated from these regions. While recent genetic studies revealed that Malagasy native dogs and goats were propagated from Africa, the origin of Malagasy native chickens is still controversial. Here, we conducted a phylogeographic analysis of the native chickens, focusing on the historical relationships among the Indian Ocean rim countries and based on mitochondrial D-loop sequences. Although previous work suggested that the rare Haplogroup D occurs with high frequencies in Island Southeast Asia-Pacific, East Africa and Madagascar, the major mitochondrial lineage in Malagasy populations is actually not Haplogroup D but the Sub-haplogroup C2, which is also observed in East Africa, North Africa, India and West Asia. We demonstrate that the Malagasy native chickens were propagated directly from West Asia (including India and North Africa), and not via East Africa. Furthermore, they display clear genetic differentiation within Madagascar, separated into the Highland and Lowland regions as seen in the human genomic landscape on this island. Our findings provide new insights for better understanding the intercommunion of material/non-material cultures within and around Madagascar.",
+    "pdf_path": null,
+    "xml_path": null,
+    "evaluation": {
+      "reasoning": "The article focuses on the mitochondrial DNA of Malagasy native chickens, tracing their origins to West Asia and distinguishing them from the East African lineage. While it provides insights into the genetic structure of Malagasy livestock, it does not directly address human population genetics or the specific admixture events in Madagascar. However, it contributes to the broader understanding of the Indian Ocean migrations and livestock origins.",
+      "keywords": [
+        "native chickens",
+        "mitochondrial DNA",
+        "West Asia",
+        "East Africa",
+        "genetic differentiation"
+      ],
+      "score": 3
+    },
+    "status": "accepted_pending_download"
+  },
+  "41606039": {
+    "pmid": "41606039",
+    "pmcid": "PMC12909787",
+    "doi": "10.1038/s41598-026-36562-7",
+    "title": "Genome-wide analysis reveals differential admixture dynamics and historical demographic contractions in African cattle.",
+    "year": 2026,
+    "abstract": "The rich cattle genetic diversity in Africa has been supporting livelihoods for centuries, providing food and nutrition security, income, and socio-cultural values. Understanding the genetic architecture of African cattle is essential for conservation and sustainable breed improvement. This study assessed genome-wide diversity, population structure, admixture patterns, and gene flow in 44 cattle populations across West, East, and Southern Africa, utilizing 63,655 medium-density SNP markers. Comparative analyses incorporated South Asian zebu and European taurine breeds for reference. Genetic diversity, estimated via observed heterozygosity and inbreeding coefficients (F<sub>ROH</sub>), indicated higher variability in African zebu and admixed populations compared to African taurine cattle. Trypanotolerant taurine breeds such as N'Dama and Lagunaire exhibited low observed heterozygosity and high inbreeding, consistent with historical isolation and natural selection in tsetse-endemic regions. Principal component analysis and ADMIXTURE clustering revealed region-specific patterns of taurine-indicine admixture. West African taurine breeds retained high taurine ancestry, while West and East African zebu breeds showed extensive indicine introgression. Southern African cattle exhibited moderate admixture, with Nguni cattle retaining a distinct Sanga genetic signature. Effective population size (Ne) estimates revealed historical bottlenecks across all regions, temporally coinciding with the nineteenth century rinderpest pandemic. Contemporary Ne values indicated small effective sizes in several taurine and localized zebu populations, warranting conservation attention. This study provides genomic insights into patterns of admixture, gene flow, and demographic variations shaping African cattle diversity. The findings emphasize the need for regionally tailored breeding and conservation strategies to sustain the genetic diversity and adaptive potential of African cattle under evolving climatic and production challenges.",
+    "pdf_path": null,
+    "xml_path": null,
+    "evaluation": {
+      "reasoning": "The article focuses on African cattle populations and their genetic diversity, admixture patterns, and historical demographic changes. While it does not directly address Madagascar or the genetic origins of its population, it provides valuable insights into the genetic history of African cattle, which can be relevant to understanding broader human population genomics. The study's methods and findings are applicable to human population genomics research.",
+      "keywords": [
+        "African cattle",
+        "genetic diversity",
+        "admixture patterns",
+        "historical demographic changes",
+        "breeding strategies"
+      ],
+      "score": 3
+    },
+    "status": "accepted_pending_download"
+  },
+  "35137043": {
+    "pmid": "35137043",
+    "pmcid": "PMC8982424",
+    "doi": "10.1093/g3journal/jkac029",
+    "title": "The genetic history of Mayotte and Madagascar cattle breeds mirrors the complex pattern of human exchanges in Western Indian Ocean.",
+    "year": 2022,
+    "abstract": "Despite their central economic and cultural role, the origin of cattle populations living in Indian Ocean islands still remains poorly documented. Here, we unravel the demographic and adaptive histories of the extant Zebus from the Mayotte and Madagascar islands using high-density SNP genotyping data. We found that these populations are very closely related and both display a predominant indicine ancestry. They diverged in the 16th century at the arrival of European people who transformed the trade network in the area. Their common ancestral cattle population originates from an admixture between an admixed African zebu population and an Indian zebu that occurred around the 12th century at the time of the earliest contacts between human African populations of the Swahili corridor and Austronesian people from Southeast Asia in Comoros and Madagascar. A steep increase in the estimated population sizes from the beginning of the 16th to the 17th century coincides with the expansion of the cattle trade. By carrying out genome scans for recent selection in the two cattle populations from Mayotte and Madagascar, we identified sets of candidate genes involved in biological functions (cancer, skin structure, and UV-protection, nervous system and behavior, organ development, metabolism, and immune response) broadly representative of the physiological adaptation to tropical conditions. Overall, the origin of the cattle populations from Western Indian Ocean islands mirrors the complex history of human migrations and trade in this area.",
+    "pdf_path": null,
+    "xml_path": null,
+    "evaluation": {
+      "reasoning": "url",
+      "keywords": [
+        "cattle",
+        "Mayotte",
+        "Madagascar",
+        "Indian Ocean",
+        "human migrations"
+      ],
+      "score": 4
+    },
+    "status": "accepted_pending_download"
+  },
+  "30715341": {
+    "pmid": "30715341",
+    "pmcid": "PMC6423374",
+    "doi": "10.1093/gbe/evz028",
+    "title": "Evidence of Austronesian Genetic Lineages in East Africa and South Arabia: Complex Dispersal from Madagascar and Southeast Asia.",
+    "year": 2019,
+    "abstract": "The Austronesian dispersal across the Indonesian Ocean to Madagascar and the Comoros has been well documented, but in an unexplained anomaly, few to no traces have been found of the Austronesian expansion in East Africa or the Arabian Peninsula. To revisit this peculiarity, we surveyed the Western Indian Ocean rim populations to identify potential Austronesian genetic ancestry. We generated full mitochondrial DNA genomes and genome-wide genotyping data for these individuals and compared them with the Banjar, the Indonesian source population of the westward Austronesian dispersal. We find strong support for Asian genetic contributions to maternal lineages and autosomal variation in modern day Somalia and Yemen. Surprisingly, this input reveals two apparently different geographic origins and timings of admixture for the Austronesian contact; one at a very early phase (likely associated with the early Austronesian dispersals), and a later movement dating to the end of nineteenth century. These Austronesian gene flows come, respectively, from Madagascar and directly from an unidentified location in Island Southeast Asia. This result reveals a far more complex dynamic of Austronesian dispersals through the Western Indian Ocean than has previously been understood and suggests that Austronesian movements within the Indian Ocean may have been part of a lengthy process, probably continuing well into the modern era.",
+    "pdf_path": null,
+    "xml_path": null,
+    "evaluation": {
+      "reasoning": "The article discusses the genetic contributions of Austronesian populations to modern populations in East Africa and South Arabia, which is relevant to the research on human population genetics and the genetic origins of Madagascar. It also mentions the complex dispersal history of Austronesian populations, which is directly linked to the genetic admixture in Madagascar.",
+      "keywords": [
+        "Austronesian",
+        "dispersal",
+        "genetic admixture",
+        "East Africa",
+        "South Arabia"
+      ],
+      "score": 4
+    },
+    "status": "accepted_pending_download"
+  },
+  "41367356": {
+    "pmid": "41367356",
+    "pmcid": "PMC12717996",
+    "doi": "10.1111/mec.70195",
+    "title": "Species-Specific Responses to Paleoclimatic Changes and Landscape Barriers Drive Contrasting Phylogeography of Co-Distributed Lemur Species in Northeastern Madagascar.",
+    "year": 2025,
+    "abstract": "River barriers have long played a central role in diversification models of tropical regions, including the exceptionally biodiverse island Madagascar. Although their role is best understood by integrating additional factors such as elevation and the ecological niche of a species, empirical studies integrating these variables remain rare. We used restriction site-associated DNA sequencing to assess the combined effect of rivers, topography, climate and forest cover on the distributions and diversity of four Microcebus and two Avahi species (Primates, Lemuriformes) in northeastern Madagascar. We inferred population structure, gene flow and genetic diversity, and assessed the association of these ecogeographic variables and genetic differentiation using isolation-by-resistance models. Our results show that significant differences in genetic diversity and connectivity among species can be explained by species-specific responses to landscape features and phylogeographic histories. Specifically, rivers present general barriers to gene flow, but dispersal between inter-river systems is possible via high-elevation headwater regions. While this led to high connectivity and genetic diversity in M. lehilahytsara and A. laniger, gene flow among M. jonahi populations is limited by low climatic niche suitability at higher elevations. Moreover, the more restricted distributions of M. macarthurii, M. simmonsi and A. mooreorum likely resulted from refugial dynamics and sea level fluctuations leading to allopatric divergence and microendemism. Together, the findings illustrate how ecological differences among species and temporal landscape dynamics mediate the role of rivers as dispersal barriers. They also highlight the importance of prioritising river headwaters and topographically complex regions, which were shown to promote connectivity, in conservation efforts.",
+    "pdf_path": null,
+    "xml_path": null,
+    "evaluation": {
+      "reasoning": "The article focuses on the phylogeography of lemur species in northeastern Madagascar, influenced by landscape features such as rivers and topography. While it does not directly address human population genetics or Madagascar's genetic origins, it provides insights into the ecological and evolutionary processes shaping lemur populations. This is relevant to understanding the complex interactions between species and their environment, which can inform broader ecological and evolutionary studies. ",
+      "keywords": [
+        "phylogeography",
+        "lizards",
+        "landscape barriers",
+        "ecological niche",
+        "conservation"
+      ],
+      "score": 3
+    },
+    "status": "accepted_pending_download"
+  },
+  "41131077": {
+    "pmid": "41131077",
+    "pmcid": "PMC12550076",
+    "doi": "10.1038/s41598-025-20856-3",
+    "title": "Leveraging known Pacific colonisation times to test models for the ancestry of Southeast Asians.",
+    "year": 2025,
+    "abstract": "The most widely accepted model for the colonization of Remote Oceania by Austronesian-speaking bearers of the Lapita complex ~ 3 ka (3000 years ago) links it to a broader Neolithic expansion from China, via Taiwan, ~ 4.5-6 ka. However, analyses of mitochondrial DNA haplogroup B4a1a1a, prevalent among Remote Oceanians today, have both supported and challenged this scenario. Here, we analyze 1364 B4a1a1 mitogenomes (234 novel) from 68 islands and compare age estimates with radiocarbon dates for colonization. We estimate the settlement of Remote Oceania ~ 3.2 [2.7; 3.75] ka, matching radiocarbon ages, and then extrapolate the age in Near Oceania. B4a1a1a arose around the northern coasts of New Guinea at least 6 ka, following Early Holocene dispersals from Asia. Technological advances (e.g., in sailing), fueled by interaction networks alongside the arrival of Late Holocene migrants from Taiwan or ISEA and putative environmental changes, likely triggered the expansion of Lapita colonists carrying B4a1a1a from New Guinea into Remote Oceania.",
+    "pdf_path": null,
+    "xml_path": null,
+    "evaluation": {
+      "reasoning": "The article discusses the colonization of Remote Oceania by Austronesian speakers and the role of mitochondrial DNA haplogroup B4a1a1a. While it does not directly focus on Madagascar or its population genetics, it provides insights into the migration patterns of Austronesian-speaking populations, which are relevant to understanding the genetic origins of Madagascar. The article uses radiocarbon dates and mitochondrial DNA analysis to estimate the timing of colonization, which is a method applicable to human population genomics.",
+      "keywords": [
+        "Austronesian",
+        "mitochondrial DNA",
+        "Remote Oceania",
+        "Lapita",
+        "Neolithic expansion"
+      ],
+      "score": 3
+    },
+    "status": "accepted_pending_download"
+  },
+  "42256180": {
+    "pmid": "42256180",
+    "pmcid": "PMC13238886",
+    "doi": "10.1002/ece3.73760",
+    "title": "Seascape Connectivity Shapes Genetic and Species β-Diversity in Tropical Reef Fishes.",
+    "year": 2026,
+    "abstract": "Habitat configuration governs the movement of organisms across landscapes, thereby shaping both population structure and community assembly. While theoretical and empirical studies have assessed how habitat connectivity simultaneously influences intra- and interspecific diversity, direct comparisons across contrasting biogeographic regions remain limited. Here, we investigate patterns of genetic and species β-diversity in tropical reef fishes across two ocean basins with distinct spatial configurations: the Caribbean Sea and the Western Indian Ocean. Using a comparative framework based on species occurrence data from five fish families and single nucleotide polymorphism (SNP) data from 19 species, we detected significant isolation by distance at both population and community levels in the Western Indian Ocean, but only at the community level in the Caribbean Sea. Additionally, genetic and species β-diversity were positively correlated among species in the Western Indian Ocean, but not in the Caribbean Sea. Together, these results suggest that the shorter inter-reef distances of the Caribbean Sea promote higher connectivity, leading to a decoupling of intra- and interspecific β-diversity patterns.",
+    "pdf_path": null,
+    "xml_path": null,
+    "evaluation": {
+      "reasoning": "The article focuses on the genetic and species β-diversity in tropical reef fishes across the Caribbean Sea and the Western Indian Ocean. While it does not directly address human population genetics or Madagascar, it does use population and community data to infer connectivity and diversity patterns. This is relevant to understanding genetic and ecological dynamics in marine environments. ",
+      "keywords": [
+        "habitat connectivity",
+        "genetic diversity",
+        "species diversity",
+        "marine ecology",
+        "tropical reef fishes"
+      ],
+      "score": 3
+    },
+    "status": "accepted_pending_download"
+  },
+  "25043035": {
+    "pmid": "25043035",
+    "pmcid": "PMC4134395",
+    "doi": "10.1038/nature13408",
+    "title": "Altitude adaptation in Tibetans caused by introgression of Denisovan-like DNA.",
+    "year": 2014,
+    "abstract": "As modern humans migrated out of Africa, they encountered many new environmental conditions, including greater temperature extremes, different pathogens and higher altitudes. These diverse environments are likely to have acted as agents of natural selection and to have led to local adaptations. One of the most celebrated examples in humans is the adaptation of Tibetans to the hypoxic environment of the high-altitude Tibetan plateau. A hypoxia pathway gene, EPAS1, was previously identified as having the most extreme signature of positive selection in Tibetans, and was shown to be associated with differences in haemoglobin concentration at high altitude. Re-sequencing the region around EPAS1 in 40 Tibetan and 40 Han individuals, we find that this gene has a highly unusual haplotype structure that can only be convincingly explained by introgression of DNA from Denisovan or Denisovan-related individuals into humans. Scanning a larger set of worldwide populations, we find that the selected haplotype is only found in Denisovans and in Tibetans, and at very low frequency among Han Chinese. Furthermore, the length of the haplotype, and the fact that it is not found in any other populations, makes it unlikely that the haplotype sharing between Tibetans and Denisovans was caused by incomplete ancestral lineage sorting rather than introgression. Our findings illustrate that admixture with other hominin species has provided genetic variation that helped humans to adapt to new environments.",
+    "pdf_path": null,
+    "xml_path": null,
+    "evaluation": {
+      "reasoning": "The article discusses the genetic adaptation of Tibetans to high-altitude environments and suggests that this adaptation may have been facilitated by introgression of Denisovan-like DNA. While this is related to human population genetics, it focuses on a specific adaptation in Tibetans rather than a broader analysis of human population genomics or specific admixture events like in Madagascar.",
+      "keywords": [
+        "Tibetans",
+        "EPAS1",
+        "Denisovan",
+        "introgression",
+        "hypoxygen"
+      ],
+      "score": 3
+    },
+    "status": "accepted_pending_download"
+  },
+  "33367711": {
+    "pmid": "33367711",
+    "pmcid": "PMC8117461",
+    "doi": "10.1093/hmg/ddaa274",
+    "title": "Bantu-speaker migration and admixture in southern Africa.",
+    "year": 2021,
+    "abstract": "The presence of Early and Middle Stone Age human remains and associated archeological artifacts from various sites scattered across southern Africa, suggests this geographic region to be one of the first abodes of anatomically modern humans. Although the presence of hunter-gatherer cultures in this region dates back to deep times, the peopling of southern Africa has largely been reshaped by three major sets of migrations over the last 2000 years. These migrations have led to a confluence of four distinct ancestries (San hunter-gatherer, East-African pastoralist, Bantu-speaker farmer and Eurasian) in populations from this region. In this review, we have summarized the recent insights into the refinement of timelines and routes of the migration of Bantu-speaking populations to southern Africa and their admixture with resident southern African Khoe-San populations. We highlight two recent studies providing evidence for the emergence of fine-scale population structure within some South-Eastern Bantu-speaker groups. We also accentuate whole genome sequencing studies (current and ancient) that have both enhanced our understanding of the peopling of southern Africa and demonstrated a huge potential for novel variant discovery in populations from this region. Finally, we identify some of the major gaps and inconsistencies in our understanding and emphasize the importance of more systematic studies of southern African populations from diverse ethnolinguistic groups and geographic locations.",
+    "pdf_path": null,
+    "xml_path": null,
+    "evaluation": {
+      "reasoning": "The article discusses the migration and admixture of Bantu-speaker populations in southern Africa, which is relevant to the genetic origins of Madagascar. However, it focuses more on southern Africa rather than directly linking to Madagascar's specific genetic history.",
+      "keywords": [
+        "Bantu migration",
+        "southern Africa",
+        "admixture",
+        "population structure",
+        "genetic origins"
+      ],
+      "score": 3
+    },
+    "status": "accepted_pending_download"
+  },
+  "36987563": {
+    "pmid": "36987563",
+    "pmcid": "PMC10118306",
+    "doi": "10.1093/gbe/evad054",
+    "title": "Evolutionary Genetics and Admixture in African Populations.",
+    "year": 2023,
+    "abstract": "As the ancestral homeland of our species, Africa contains elevated levels of genetic diversity and substantial population structure. Importantly, African genomes are heterogeneous: They contain mixtures of multiple ancestries, each of which have experienced different evolutionary histories. In this review, we view population genetics through the lens of admixture, highlighting how multiple demographic events have shaped African genomes. Each of these historical vignettes paints a recurring picture of population divergence followed by secondary contact. First, we give a brief overview of genetic variation in Africa and examine deep population structure within Africa, including the evidence of ancient introgression from archaic \"ghost\" populations. Second, we describe the genetic legacies of admixture events that have occurred during the past 10,000 years. This includes gene flow between different click-speaking Khoe-San populations, the stepwise spread of pastoralism from eastern to southern Africa, multiple migrations of Bantu speakers across the continent, as well as admixture from the Middle East and Europe into the Sahel region and North Africa. Furthermore, the genomic signatures of more recent admixture can be found in the Cape Peninsula and throughout the African diaspora. Third, we highlight how natural selection has shaped patterns of genetic variation across the continent, noting that gene flow provides a potent source of adaptive variation and that selective pressures vary across Africa. Finally, we explore the biomedical implications of population structure in Africa on health and disease and call for more ethically conducted studies of genetic variation in Africa.",
+    "pdf_path": null,
+    "xml_path": null,
+    "evaluation": {
+      "reasoning": "The article discusses genetic diversity and admixture in African populations, which is relevant to the research on human population genetics and the genetic origins of Madagascar. However, it does not specifically focus on Madagascar or the Austronesian and Bantu admixture. It covers broader aspects of African population genetics.",
+      "keywords": [
+        "African populations",
+        "genetic diversity",
+        "admixture",
+        "population structure",
+        "natural selection"
+      ],
+      "score": 3
+    },
+    "status": "accepted_pending_download"
+  },
+  "29715266": {
+    "pmid": "29715266",
+    "pmcid": "PMC5929549",
+    "doi": "10.1371/journal.pone.0196325",
+    "title": "Population structure in Argentina.",
+    "year": 2018,
+    "abstract": "We analyzed 391 samples from 12 Argentinian populations from the Center-West, East and North-West regions with the Illumina Human Exome Beadchip v1.0 (HumanExome-12v1-A). We did Principal Components analysis to infer patterns of populational divergence and migrations. We identified proportions and patterns of European, African and Native American ancestry and found a correlation between distance to Buenos Aires and proportion of Native American ancestry, where the highest proportion corresponds to the Northernmost populations, which is also the furthest from the Argentinian capital. Most of the European sources are from a South European origin, matching historical records, and we see two different Native American components, one that spreads all over Argentina and another specifically Andean. The highest percentages of African ancestry were in the Center West of Argentina, where the old trade routes took the slaves from Buenos Aires to Chile and Peru. Subcontinentaly, sources of this African component are represented by both West Africa and groups influenced by the Bantu expansion, the second slightly higher than the first, unlike North America and the Caribbean, where the main source is West Africa. This is reasonable, considering that a large proportion of the ships arriving at the Southern Hemisphere came from Mozambique, Loango and Angola.",
+    "pdf_path": null,
+    "xml_path": null,
+    "evaluation": {
+      "reasoning": "bytes",
+      "keywords": [
+        "Population structure",
+        "Argentinian populations",
+        "European ancestry",
+        "Native American ancestry",
+        "African ancestry"
+      ],
+      "score": 3
+    },
+    "status": "accepted_pending_download"
+  },
+  "27324836": {
+    "pmid": "27324836",
+    "pmcid": "PMC4915815",
+    "doi": "10.7554/eLife.15266",
+    "title": "Admixture into and within sub-Saharan Africa.",
+    "year": 2016,
+    "abstract": "Similarity between two individuals in the combination of genetic markers along their chromosomes indicates shared ancestry and can be used to identify historical connections between different population groups due to admixture. We use a genome-wide, haplotype-based, analysis to characterise the structure of genetic diversity and gene-flow in a collection of 48 sub-Saharan African groups. We show that coastal populations experienced an influx of Eurasian haplotypes over the last 7000 years, and that Eastern and Southern Niger-Congo speaking groups share ancestry with Central West Africans as a result of recent population expansions. In fact, most sub-Saharan populations share ancestry with groups from outside of their current geographic region as a result of gene-flow within the last 4000 years. Our in-depth analysis provides insight into haplotype sharing across different ethno-linguistic groups and the recent movement of alleles into new environments, both of which are relevant to studies of genetic epidemiology.",
+    "pdf_path": null,
+    "xml_path": null,
+    "evaluation": {
+      "reasoning": "The article discusses admixture into and within sub-Saharan Africa, which is relevant to the research on human population genetics and the genetic origins of Madagascar. Although the focus is on sub-Saharan Africa, the methods and insights can be applied to understanding genetic admixture in other regions, including Madagascar. The article also touches on recent population expansions and gene-flow, which are relevant to the study of human population genomics methods.",
+      "keywords": [
+        "admixture",
+        "sub-Saharan Africa",
+        "population expansions",
+        "gene-flow",
+        "haplotype-based analysis"
+      ],
+      "score": 4
+    },
+    "status": "accepted_pending_download"
+  },
+  "34872534": {
+    "pmid": "34872534",
+    "pmcid": "PMC8650298",
+    "doi": "10.1186/s12915-021-01193-z",
+    "title": "Male-biased migration from East Africa introduced pastoralism into southern Africa.",
+    "year": 2021,
+    "abstract": "Hunter-gatherer lifestyles dominated the southern African landscape up to ~ 2000 years ago, when herding and farming groups started to arrive in the area. First, herding and livestock, likely of East African origin, appeared in southern Africa, preceding the arrival of the large-scale Bantu-speaking agro-pastoralist expansion that introduced West African-related genetic ancestry into the area. Present-day Khoekhoe-speaking Namaqua (or Nama in short) pastoralists show high proportions of East African admixture, linking the East African ancestry with Khoekhoe herders. Most other historical Khoekhoe populations have, however, disappeared over the last few centuries and their contribution to the genetic structure of present-day populations is not well understood. In our study, we analyzed genome-wide autosomal and full mitochondrial data from a population who trace their ancestry to the Khoekhoe-speaking Hessequa herders from the southern Cape region of what is now South Africa.\nWe generated genome-wide data from 162 individuals and mitochondrial DNA data of a subset of 87 individuals, sampled in the Western Cape Province, South Africa, where the Hessequa population once lived. Using available comparative data from Khoe-speaking and related groups, we aligned genetic date estimates and admixture proportions to the archaeological proposed dates and routes for the arrival of the East African pastoralists in southern Africa. We identified several Afro-Asiatic-speaking pastoralist groups from Ethiopia and Tanzania who share high affinities with the East African ancestry present in southern Africa. We also found that the East African pastoralist expansion was heavily male-biased, akin to a pastoralist migration previously observed on the genetic level in ancient Europe, by which Pontic-Caspian Steppe pastoralist groups represented by the Yamnaya culture spread across the Eurasian continent during the late Neolithic/Bronze Age.\nWe propose that pastoralism in southern Africa arrived through male-biased migration of an East African Afro-Asiatic-related group(s) who introduced new subsistence and livestock practices to local southern African hunter-gatherers. Our results add to the understanding of historical human migration and mobility in Africa, connected to the spread of food-producing and livestock practices.",
+    "pdf_path": null,
+    "xml_path": null,
+    "evaluation": {
+      "reasoning": "The article discusses the introduction of pastoralism into southern Africa, linking it to the genetic ancestry of East African groups. This is relevant to the genetic origins of Madagascar, as it involves similar migration patterns and admixture. The study also provides insights into human population genomics methods.",
+      "keywords": [
+        "pastoralism",
+        "East Africa",
+        "genetic ancestry",
+        "human migration",
+        "admixture"
+      ],
+      "score": 4
+    },
+    "status": "accepted_pending_download"
+  },
+  "33828095": {
+    "pmid": "33828095",
+    "pmcid": "PMC8027885",
+    "doi": "10.1038/s41467-021-22207-y",
+    "title": "Genetic substructure and complex demographic history of South African Bantu speakers.",
+    "year": 2021,
+    "abstract": "South Eastern Bantu-speaking (SEB) groups constitute more than 80% of the population in South Africa. Despite clear linguistic and geographic diversity, the genetic differences between these groups have not been systematically investigated. Based on genome-wide data of over 5000 individuals, representing eight major SEB groups, we provide strong evidence for fine-scale population structure that broadly aligns with geographic distribution and is also congruent with linguistic phylogeny (separation of Nguni, Sotho-Tswana and Tsonga speakers). Although differential Khoe-San admixture plays a key role, the structure persists after Khoe-San ancestry-masking. The timing of admixture, levels of sex-biased gene flow and population size dynamics also highlight differences in the demographic histories of individual groups. The comparisons with five Iron Age farmer genomes further support genetic continuity over ~400 years in certain regions of the country. Simulated trait genome-wide association studies further show that the observed population structure could have major implications for biomedical genomics research in South Africa.",
+    "pdf_path": null,
+    "xml_path": null,
+    "evaluation": {
+      "reasoning": "url",
+      "keywords": [
+        "South African Bantu",
+        "population structure",
+        "demographic history",
+        "Khoe-San admixture",
+        "genome-wide data"
+      ],
+      "score": 3
+    },
+    "status": "accepted_pending_download"
+  },
+  "29933384": {
+    "pmid": "29933384",
+    "pmcid": "PMC6014653",
+    "doi": "10.1371/journal.pone.0198689",
+    "title": "Cranio-morphometric and aDNA corroboration of the Austronesian dispersal model in ancient Island Southeast Asia: Support from Gua Harimau, Indonesia.",
+    "year": 2018,
+    "abstract": "The Austronesian language is spread from Madagascar in the west, Island Southeast Asia (ISEA) in the east (e.g. the Philippines and Indonesian archipelagoes) and throughout the Pacific, as far east as Easter Island. While it seems clear that the remote ancestors of Austronesian speakers originated in Southern China, and migrated to Taiwan with the development of rice farming by c. 5500 BP and onto the northern Philippines by c. 4000 BP (the Austronesian Dispersal Hypothesis or ADH), we know very little about the origins and emergence of Austronesian speakers in the Indonesian Archipelago. Using a combination of cranial morphometric and ancient mtDNA analyses on a new dataset from Gua Hairmau, that spans the pre-Neolithic through to Metal Period (5712-5591cal BP to 1864-1719 cal BP), we rigorously test the validity of the ADH in ISEA. A morphometric analysis of 23 adult male crania, using 16 of Martin's standard measurements, was carried out with results compared to an East and Southeast Asian dataset of 30 sample populations spanning the Late Pleistocene through to Metal Period, in addition to 39 modern samples from East and Southeast Asia, near Oceania and Australia. Further, 20 samples were analyzed for ancient mtDNA and assigned to identified haplogroups. We demonstrate that the archaeological human remains from Gua Harimau cave, Sumatra, Indonesia provide clear evidence for at least two (cranio-morphometrically defined) and perhaps even three (in the context of the ancient mtDNA results) distinct populations from two separate time periods. The results of these analyses provide substantive support for the ADH model in explaining the origins and population history of ISEA peoples.",
+    "pdf_path": null,
+    "xml_path": null,
+    "evaluation": {
+      "reasoning": "url",
+      "keywords": [
+        "Austronesian",
+        "dispersal",
+        "Island Southeast Asia",
+        "ancient DNA",
+        "cranial morphology"
+      ],
+      "score": 4
+    },
+    "status": "accepted_pending_download"
+  },
+  "33259529": {
+    "pmid": "33259529",
+    "pmcid": "PMC7707576",
+    "doi": "10.1371/journal.pone.0243171",
+    "title": "Geographical and social isolation drive the evolution of Austronesian languages.",
+    "year": 2020,
+    "abstract": "The origins of linguistic diversity remain controversial. Studies disagree on whether group features such as population size or social structure accelerate or decelerate linguistic differentiation. While some analyses of between-group factors highlight the role of geographical isolation and reduced linguistic exchange in differentiation, others suggest that linguistic divergence is driven primarily by warfare among neighbouring groups and the use of language as marker of group identity. Here we provide the first integrated test of the effects of five historical sociodemographic and geographic variables on three measures of linguistic diversification among 50 Austronesian languages: rates of word gain, loss and overall lexical turnover. We control for their shared evolutionary histories through a time-calibrated phylogenetic sister-pairs approach. Results show that languages spoken in larger communities create new words at a faster pace. Within-group conflict promotes linguistic differentiation by increasing word loss, while warfare hinders linguistic differentiation by decreasing both rates of word gain and loss. Finally, we show that geographical isolation is a strong driver of lexical evolution mainly due to a considerable drift-driven acceleration in rates of word loss. We conclude that the motor of extreme linguistic diversity in Austronesia may have been the dispersal of populations across relatively isolated islands, favouring strong cultural ties amongst societies instead of warfare and cultural group marking.",
+    "pdf_path": null,
+    "xml_path": null,
+    "evaluation": {
+      "reasoning": "The article focuses on the geographical and social isolation driving the evolution of Austronesian languages, which is relevant to the research on human population genetics and the genetic origins of Madagascar. It discusses sociodemographic and geographic variables affecting linguistic diversification, which can be indirectly related to human population genetics and migration patterns.",
+      "keywords": [
+        "Austronesian languages",
+        "linguistic diversification",
+        "geographical isolation",
+        "social structure",
+        "population genetics"
+      ],
+      "score": 4
+    },
+    "status": "accepted_pending_download"
+  },
+  "24498084": {
+    "pmid": "24498084",
+    "pmcid": "PMC3907543",
+    "doi": "10.1371/journal.pone.0087355",
+    "title": "Population genetic structure and isolation by distance of Helicobacter pylori in Senegal and Madagascar.",
+    "year": 2014,
+    "abstract": "Helicobacter pylori has probably infected the human stomach since our origins and subsequently diversified in parallel with their human hosts. The genetic population history of H. pylori can therefore be used as a marker for human migration. We analysed seven housekeeping gene sequences of H. pylori strains isolated from 78 Senegalese and 24 Malagasy patients and compared them with the sequences of strains from other geographical locations. H. pylori from Senegal and Madagascar can be placed in the previously described HpAfrica1 genetic population, subpopulations hspWAfrica and hspSAfrica, respectively. These 2 subpopulations correspond to the distribution of Niger-Congo speakers in West and most of subequatorial Africa (due to Bantu migrations), respectively. H. pylori appears as a single population in Senegal, indicating a long common history between ethnicities as well as frequent local admixtures. The lack of differentiation between these isolates and an increasing genetic differentiation with geographical distance between sampling locations in Africa was evidence for genetic isolation by distance. The Austronesian expansion that started from Taiwan 5000 years ago dispersed one of the 10 subgroups of the Austronesian language family via insular Southeast Asia into the Pacific and Madagascar, and hspMaori is a marker for the entire Austronesian expansion. Strain competition and replacement of hspMaori by hpAfrica1 strains from Bantu migrants are the probable reasons for the presence of hspSAfrica strains in Malagasy of Southeast Asian descent. hpAfrica1 strains appear to be generalist strains that have the necessary genetic diversity to efficiently colonise a wide host spectrum.",
+    "pdf_path": null,
+    "xml_path": null,
+    "evaluation": {
+      "reasoning": "The article focuses on the genetic structure and isolation by distance of H. pylori strains in Senegal and Madagascar, using these strains as a marker for human migration. While it does not directly address human population genetics of Madagascar or the specific admixture of Austronesian and Bantu populations, it does provide insights into the genetic history of H. pylori in Africa and its relation to language families. This is relevant to human population genomics methods.",
+      "keywords": [
+        "H. pylori",
+        "genetic population history",
+        "Isolation by distance",
+        "language families",
+        "Bantu migrations"
+      ],
+      "score": 3
+    },
+    "status": "accepted_pending_download"
+  },
+  "34899843": {
+    "pmid": "34899843",
+    "pmcid": "PMC8653818",
+    "doi": "10.3389/fgene.2021.758563",
+    "title": "Population Structure of the South West Indian Ocean Islands: Implications for Precision Medicine.",
+    "year": 2021,
+    "abstract": "Precision medicine has brought new hopes for patients around the world with the applications of novel technologies for understanding genetics of complex diseases and their translation into clinical services. Such applications however require a foundation of skills, knowledge and infrastructure to translate genetics for health care. The crucial element is no doubt the availability of genomics data for the target populations, which is seriously lacking for most parts of Africa. We discuss here why it is vital to prioritize genomics data for the South West Indian Ocean region where a mosaic of ethnicities co-exist. The islands of the SWIO, which comprise Madagascar, La Reunion, Mauritius, Seychelles and Comoros, have been the scene for major explorations and trade since the 17th century being on the route to Asia. This part of the world has lived through active passage of slaves from East Africa to Arabia and further. Today's demography of the islands is a diverse mix of ancestries including European, African and Asian. The extent of admixtures has yet to be resolved. Except for a few studies in Madagascar, there is very little published data on human genetics for these countries. Isolation and small population sizes have likely resulted in reduced genetic variation and possible founder effects. There is a significant prevalence of diabetes, particularly in individuals of Indian descent, while breast and prostate cancers are on the rise. The island of La Reunion is a French overseas territory with a high standard of health care and close ties to Mauritius. Its demography is comparable to that of Mauritius but with a predominantly mixed population and a smaller proportion of people of Indian descent. On the other hand, Madagascar's African descendants inhabit mostly the lower coastal zones of the West and South regions, while the upper highlands are occupied by peoples of mixed African-Indonesian ancestries. Historical records confirm the Austronesian contribution to the Madagascar genomes. With the rapid progress in genomic medicine, there is a growing demand for sequencing services in the clinical settings to explore the incidence of variants in candidate disease genes and other markers. Genome sequence data has become a priority in order to understand the population sub-structures and to identify specific pathogenic variants among the different groups of inhabitants on the islands. Genomic data is increasingly being used to advise families at risk and propose diagnostic screening measures to enhance the success of therapies. This paper discusses the complexity of the islands' populations and argues for the needs for genotyping and understanding the genetic factors associated with disease risks. The benefits to patients and improvement in health services through a concerted regional effort are depicted. Some private patients are having recourse to external facilities for molecular profiling with no return of data for research. Evidence of disease variants through sequencing represents a valuable source of medical data that can guide policy decisions at the national level. There are presently no such records for future implementation of strategies for genomic medicine.",
+    "pdf_path": null,
+    "xml_path": null,
+    "evaluation": {
+      "reasoning": "Population Structure of the South West Indian Ocean Islands: Implications for Precision Medicine",
+      "keywords": [
+        "South West Indian Ocean Islands",
+        "Precision Medicine",
+        "Genomics Data",
+        "Population Structure",
+        "Complex Diseases"
+      ],
+      "score": 3
+    },
+    "status": "accepted_pending_download"
+  },
+  "25137359": {
+    "pmid": "25137359",
+    "pmcid": "PMC4143916",
+    "doi": "10.1038/ncomms5689",
+    "title": "Reconstructing Austronesian population history in Island Southeast Asia.",
+    "year": 2014,
+    "abstract": "Austronesian languages are spread across half the globe, from Easter Island to Madagascar. Evidence from linguistics and archaeology indicates that the 'Austronesian expansion,' which began 4,000-5,000 years ago, likely had roots in Taiwan, but the ancestry of present-day Austronesian-speaking populations remains controversial. Here, we analyse genome-wide data from 56 populations using new methods for tracing ancestral gene flow, focusing primarily on Island Southeast Asia. We show that all sampled Austronesian groups harbour ancestry that is more closely related to aboriginal Taiwanese than to any present-day mainland population. Surprisingly, western Island Southeast Asian populations have also inherited ancestry from a source nested within the variation of present-day populations speaking Austro-Asiatic languages, which have historically been nearly exclusive to the mainland. Thus, either there was once a substantial Austro-Asiatic presence in Island Southeast Asia, or Austronesian speakers migrated to and through the mainland, admixing there before continuing to western Indonesia.",
+    "pdf_path": null,
+    "xml_path": null,
+    "evaluation": {
+      "reasoning": "{score 4}",
+      "keywords": [
+        "Austronesian",
+        "Island Southeast Asia",
+        "Taiwan",
+        "gene flow",
+        "ancestry"
+      ],
+      "score": 4
+    },
+    "status": "accepted_pending_download"
+  }
+}

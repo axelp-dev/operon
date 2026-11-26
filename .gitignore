@@ -5,10 +5,8 @@
 /**/__pycache__
 pyrightconfig.json
 
-# --- Data --- 
-data/ 
-
 # --- Local files ---
+data/operon.log
 .DS_Store
 docs
 
