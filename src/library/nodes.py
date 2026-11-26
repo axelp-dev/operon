@@ -8,19 +8,17 @@ from src.config import CONTEXT, HISTORY_PATH, INDEX_PATH
 from src.library.llm_tasks import generate_llm_queries, parse_article
 from src.library.providers import (
     download_pmc_assets,
-    get_references_europe_pmc,
-    get_references_ncbi_pubmed,
-    get_references_openalex,
+    fetch_article_references,
+    fetch_references_batch_openalex,
     search_europe_pmc,
     search_ncbi_pubmed,
     search_openalex,
 )
 from src.library.state import BaseLibraryState, FetchState, SnowballState
-from src.library.storage import _load_json_database
+from src.library.storage import _load_json_database, get_min_scored_articles
 from src.logger import log
 
-# --- NODES -------------------------------
-
+# --- PROVIDERS -------------------------------
 
 SEARCH_PROVIDERS = [
     ("EuropePMC", search_europe_pmc),
@@ -29,26 +27,43 @@ SEARCH_PROVIDERS = [
 ]
 
 
-REF_PROVIDERS = [
-    ("EuropePMC", lambda art: get_references_europe_pmc.invoke({"pmid": art["pmid"]})),
-    (
-        "NCBI_PubMed",
-        lambda art: get_references_ncbi_pubmed.invoke({"pmid": art["pmid"]}),
-    ),
-    (
-        "OpenAlex",
-        lambda art: get_references_openalex.invoke(
-            {"pmid": art["pmid"], "doi": art.get("doi")}
-        ),
-    ),
-]
+# --- NODES -------------------------------
 
 
-def node_fetch_refs(state: BaseLibraryState) -> dict:
+def node_fetch_refs(state: SnowballState) -> dict:
     """Get articles from current library and
     extend it using cited references"""
 
     # --- Step 1 : Get articles from actual librry ---
+    index = _load_json_database(db_path=INDEX_PATH)
+    articles = get_min_scored_articles(
+        index=index, min_score=state["min_score"], max_articles=state["max_selected"]
+    )
+
+    # --- Step 2 : fetch references for article batch ---
+    # Use OpenAlex provider
+    batch_refs = fetch_references_batch_openalex(articles)
+
+    refs_2_arts: dict[str, set[str]] = {}
+    for art in articles:
+        refs = batch_refs.get(art.pmid) or fetch_article_references(art)
+        art.references = refs
+        for ref in refs:
+            refs_2_arts.setdefault(ref, set()).add(art.pmid)
+
+    # --- Step 3 : Get most cited references ---
+    refs_counts = dict(
+        sorted(
+            ((ref, len(pmids)) for ref, pmids in refs_2_arts.items()),
+            key=lambda item: item[1],
+            reverse=True,
+        )
+    )
+    n_kept = len(list(refs_counts.items())[: state["max_selected"]])
+    log.search(
+        msg=f"Found {len(refs_counts)} in library reference parsing - keeping only {n_kept}"
+    )
+    log.search(msg=f"Top 5 co-cited: {list(refs_counts.items())[:5]}")
 
     return {}
 

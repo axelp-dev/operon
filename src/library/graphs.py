@@ -8,6 +8,7 @@ from langgraph.graph.state import CompiledStateGraph
 
 from src.library.nodes import (
     node_build_queries_llm,
+    node_fetch_refs,
     node_filter_existing_articles,
     node_read_articles,
     node_save_index,
@@ -16,7 +17,7 @@ from src.library.nodes import (
     route_after_filter,
     route_after_indexing,
 )
-from src.library.state import FetchState
+from src.library.state import BaseLibraryState, FetchState, SnowballState
 
 # --- BUILD GRAPHS -------------------------------
 
@@ -66,13 +67,19 @@ def build_snowball_graph() -> CompiledStateGraph:
     in-depth references exploration from existing
     articles in library.
     """
+    builder = StateGraph(SnowballState)
 
-    # Get high-scored articles in the library
+    # Nodes definitions
+    builder.add_node("fetch_refs", node_fetch_refs)
 
-    # Feth their references
+    # --- Graph Build ---
+    # Fetch top-ranked articles' references
+    builder.add_edge(START, "fetch_refs")
+    builder.add_edge("fetch_refs", END)
 
     # Get most cited references
 
     # filter -> read -> save index
 
-    raise NotImplementedError()
+    snowball_graph = builder.compile()
+    return snowball_graph

@@ -46,6 +46,10 @@ class ArticleMeta(BaseModel):
     # Evaluation
     evaluation: ArticleEvaluation | None = None
 
+    # References
+    references: list[str] = Field(default_factory=list)
+    refs_explored: bool = False
+
     # Pipeline status
     status: Literal[
         "pending_filtering",  # Article just added to the current state
@@ -108,6 +112,8 @@ class SnowballState(BaseLibraryState):
     min_score: int
     # Number of minimal citations for a reference to be fetched
     min_refs: int
+    # Max number init articles to select in index.json
+    max_selected: int
 
     # --- Containers ---
     # Selected articles for references extention

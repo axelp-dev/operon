@@ -10,6 +10,7 @@ from langchain_core.tools import tool
 
 from src.config import HEADERS
 from src.library.state import ArticleMeta
+from src.logger import log
 
 # --- HERLPERS -------------------------------
 
@@ -258,3 +259,165 @@ def download_pmc_assets(
                 pass
 
     return {"pdf_path": saved_pdf, "xml_path": saved_xml}
+
+
+# --- REFERENCES FETCH -------------------------------
+
+REF_PROVIDERS = [
+    (
+        "OpenAlex",
+        lambda art: get_references_openalex.invoke({"pmid": art.pmid, "doi": art.doi}),
+    ),
+    ("NCBI_PubMed", lambda art: get_references_ncbi_pubmed.invoke({"pmid": art.pmid})),
+    ("EuropePMC", lambda art: get_references_europe_pmc.invoke({"pmid": art.pmid})),
+]
+
+
+@tool
+def get_references_europe_pmc(pmid: str, max_refs: int = 100) -> list[str]:
+    """Fetch cited PMIDs for a given article from Europe PMC."""
+    if not pmid.isdigit():
+        return []
+    url = f"https://www.ebi.ac.uk/europepmc/webservices/rest/MED/{pmid}/references"
+    params = {"page": 1, "pageSize": max_refs, "format": "json"}
+    resp = httpx.get(url, params=params, headers=HEADERS, timeout=30.0)
+    resp.raise_for_status()
+
+    refs = []
+    for item in resp.json().get("referenceList", {}).get("reference", []):
+        ref_pmid = item.get("id")
+        if ref_pmid and str(ref_pmid).isdigit():
+            refs.append(str(ref_pmid))
+    return refs
+
+
+@tool
+def get_references_ncbi_pubmed(pmid: str) -> list[str]:
+    """Fetch cited PMIDs for a given article via NCBI E-utilities (elink)."""
+    if not pmid.isdigit():
+        return []
+    url = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/elink.fcgi"
+    params = {
+        "dbfrom": "pubmed",
+        "db": "pubmed",
+        "linkname": "pubmed_pubmed_refs",
+        "id": pmid,
+        "retmode": "json",
+    }
+    resp = httpx.get(url, params=params, headers=HEADERS, timeout=30.0)
+    resp.raise_for_status()
+
+    linksets = resp.json().get("linksets", [])
+    if not linksets:
+        return []
+    for linksetdb in linksets[0].get("linksetdbs", []):
+        if linksetdb.get("linkname") == "pubmed_pubmed_refs":
+            return [str(uid) for uid in linksetdb.get("links", [])]
+    return []
+
+
+@tool
+def get_references_openalex(pmid: str, doi: str | None = None) -> list[str]:
+    """Fetch cited OpenAlex Work IDs (W...) using DOI or PMID fallback."""
+    identifier = f"https://doi.org/{doi}" if doi else f"pmid:{pmid}"
+    url = f"https://api.openalex.org/works/{identifier}"
+    params = {"select": "referenced_works", "mailto": "contact@operon.local"}
+    resp = httpx.get(url, params=params, headers=HEADERS, timeout=30.0)
+    resp.raise_for_status()
+
+    raw_urls = resp.json().get("referenced_works", [])
+    # Transforme "https://openalex.org/W2741809807" en "W2741809807"
+    return [u.rstrip("/").split("/")[-1] for u in raw_urls if u]
+
+
+def fetch_article_references(article: ArticleMeta) -> list[str]:
+    """
+    Get IDs from cited articles cited by an ArticleMeta object
+    using sequential fallback (EuropePMC -> NCBI_PubMed -> OpenAlex).
+    """
+    for provider_name, fetcher in REF_PROVIDERS:
+        try:
+            refs = fetcher(article)
+            if refs:
+                log.debug(
+                    "SNOWBALL", f"({provider_name}) {article.pmid} -> {len(refs)} refs"
+                )
+                return refs
+        except Exception as exc:
+            log.warn(
+                f"({provider_name}) Failed refs for {article.pmid} ({type(exc).__name__})"
+            )
+
+    return []
+
+
+def fetch_references_batch_openalex(
+    articles: list[ArticleMeta],
+) -> dict[str, list[str]]:
+    """
+    Récupère les références sortantes (IDs OpenAlex W...) de toute une liste
+    d'articles en 1 seul appel HTTP batch via DOI (ou PMID en fallback).
+    Retourne {article.pmid: ["W...", "W...", ...]}.
+    """
+    if not articles:
+        return {}
+
+    # Mapping pour rattacher chaque réponse OpenAlex à l'article d'origine
+    doi_to_pmid = {art.doi.lower().strip(): art.pmid for art in articles if art.doi}
+    pmid_set = {art.pmid for art in articles if art.pmid.isdigit()}
+
+    results: dict[str, list[str]] = {art.pmid: [] for art in articles}
+
+    # 1. Batch par DOI (couvre >95% des articles)
+    if doi_to_pmid:
+        dois_filter = "|".join(
+            f"https://doi.org/{d}" for d in list(doi_to_pmid.keys())[:50]
+        )
+        url = "https://api.openalex.org/works"
+        params = {
+            "filter": f"doi:{dois_filter}",
+            "select": "doi,referenced_works",
+            "per-page": 50,
+            "mailto": "contact@operon.local",
+        }
+        resp = httpx.get(url, params=params, headers=HEADERS, timeout=20.0)
+        resp.raise_for_status()
+
+        for work in resp.json().get("results", []):
+            raw_doi = (
+                (work.get("doi") or "").replace("https://doi.org/", "").lower().strip()
+            )
+            owner_pmid = doi_to_pmid.get(raw_doi)
+            if owner_pmid:
+                results[owner_pmid] = [
+                    u.rstrip("/").split("/")[-1]
+                    for u in work.get("referenced_works", [])
+                    if u
+                ]
+
+    # 2. Batch par PMID pour les articles restants sans DOI (ou non trouvés via DOI)
+    missing_pmids = [p for p in pmid_set if not results.get(p)]
+    if missing_pmids:
+        pmids_filter = "|".join(missing_pmids[:50])
+        url = "https://api.openalex.org/works"
+        params = {
+            "filter": f"pmid:{pmids_filter}",
+            "select": "ids,referenced_works",
+            "per-page": 50,
+            "mailto": "contact@operon.local",
+        }
+        resp = httpx.get(url, params=params, headers=HEADERS, timeout=20.0)
+        resp.raise_for_status()
+
+        for work in resp.json().get("results", []):
+            raw_pmid = (
+                (work.get("ids", {}).get("pmid") or "").rstrip("/").split("/")[-1]
+            )
+            if raw_pmid in results:
+                results[raw_pmid] = [
+                    u.rstrip("/").split("/")[-1]
+                    for u in work.get("referenced_works", [])
+                    if u
+                ]
+
+    return results
