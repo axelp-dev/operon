@@ -9,6 +9,7 @@
 
 ### Added
 
+- Add benchmark script for Qwen model on articles evaluation. 
 - Implement `node_fetch_refs` for references selection in library. 
 - Implement score-fetching article on the library in `library.storage`. 
 - Use new `data/history.json` database for rejected articles saving. 
