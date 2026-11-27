@@ -71,13 +71,17 @@ def build_snowball_graph() -> CompiledStateGraph:
 
     # Nodes definitions
     builder.add_node("fetch_refs", node_fetch_refs)
+    builder.add_node("filter", node_filter_existing_articles)
+    builder.add_node("read", node_read_articles)
+    builder.add_node("save_index", node_save_index)
 
     # --- Graph Build ---
     # Fetch top-ranked articles' references
     builder.add_edge(START, "fetch_refs")
-    builder.add_edge("fetch_refs", END)
-
-    # Get most cited references
+    builder.add_edge("fetch_refs", "filter")
+    builder.add_edge("filter", "read")
+    builder.add_edge("read", "save_index")
+    builder.add_edge("save_index", END)
 
     # filter -> read -> save index
 

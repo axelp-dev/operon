@@ -9,6 +9,7 @@ from src.library.llm_tasks import generate_llm_queries, parse_article
 from src.library.providers import (
     download_pmc_assets,
     fetch_article_references,
+    fetch_articles_by_ids,
     fetch_references_batch_openalex,
     search_europe_pmc,
     search_ncbi_pubmed,
@@ -52,20 +53,22 @@ def node_fetch_refs(state: SnowballState) -> dict:
             refs_2_arts.setdefault(ref, set()).add(art.pmid)
 
     # --- Step 3 : Get most cited references ---
-    refs_counts = dict(
-        sorted(
-            ((ref, len(pmids)) for ref, pmids in refs_2_arts.items()),
-            key=lambda item: item[1],
+    top_ref_ids = [
+        ref
+        for ref, pmids in sorted(
+            refs_2_arts.items(),
+            key=lambda item: len(item[1]),
             reverse=True,
         )
-    )
-    n_kept = len(list(refs_counts.items())[: state["max_selected"]])
-    log.search(
-        msg=f"Found {len(refs_counts)} in library reference parsing - keeping only {n_kept}"
-    )
-    log.search(msg=f"Top 5 co-cited: {list(refs_counts.items())[:5]}")
+        if len(pmids) >= state["min_refs"]
+    ][: state["max_selected"]]
 
-    return {}
+    log.search(
+        msg=f"Found {len(refs_2_arts)} unique refs -> hydrating top {len(top_ref_ids)} (min_refs={state['min_refs']})"
+    )
+
+    hydrated_candidates = fetch_articles_by_ids(top_ref_ids)
+    return {"raw_candidates": hydrated_candidates}
 
 
 def node_search(state: FetchState) -> dict:
@@ -185,8 +188,10 @@ def node_save_index(state: BaseLibraryState) -> dict:
         json.dumps(history, indent=2, ensure_ascii=False), encoding="utf-8"
     )
 
-    log.index(f"Saved {len(index)} accepted articles in {INDEX_PATH}")
-    log.index(f"Saved {len(history)} rejected articles in {HISTORY_PATH}")
+    log.index(f"Saved {len(state['new_articles'])} accepted articles in {INDEX_PATH}")
+    log.index(
+        f"Saved {len(state['rejected_articles'])} rejected articles in {HISTORY_PATH}"
+    )
     return {}
 
 

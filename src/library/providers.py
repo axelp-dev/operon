@@ -421,3 +421,82 @@ def fetch_references_batch_openalex(
                 ]
 
     return results
+
+
+def fetch_articles_by_ids(ref_ids: list[str]) -> list[dict]:
+    """
+    Hydrate une liste mixte d'IDs OpenAlex ('W...') et de PMIDs numériques ('12345678')
+    en métadonnées ArticleMeta sérialisées (list[dict]).
+    """
+    if not ref_ids:
+        return []
+
+    openalex_ids = [rid.strip() for rid in ref_ids if rid.startswith("W")]
+    pmids = [rid.strip() for rid in ref_ids if rid.isdigit()]
+
+    articles: list[dict] = []
+    seen_ids: set[str] = set()
+
+    def _parse_openalex_results(items: list[dict]) -> None:
+        for item in items:
+            ids = item.get("ids", {})
+            raw_pmid = ids.get("pmid", "")
+            pmid = raw_pmid.rstrip("/").split("/")[-1] if raw_pmid else None
+            article_id = pmid or item.get("id", "").split("/")[-1]
+
+            if not article_id or article_id in seen_ids:
+                continue
+            seen_ids.add(article_id)
+
+            raw_pmcid = ids.get("pmcid", "")
+            pmcid = raw_pmcid.rstrip("/").split("/")[-1] if raw_pmcid else None
+
+            raw_doi = item.get("doi", "")
+            doi = raw_doi.replace("https://doi.org/", "") if raw_doi else None
+
+            articles.append(
+                ArticleMeta(
+                    pmid=str(article_id),
+                    pmcid=pmcid,
+                    doi=doi,
+                    title=item.get("title") or "Sans titre",
+                    year=item.get("publication_year"),
+                    abstract=_reconstruct_openalex_abstract(
+                        item.get("abstract_inverted_index")
+                    ),
+                ).model_dump()
+            )
+
+    # 1. Batch par OpenAlex ID (W...)
+    for i in range(0, len(openalex_ids), 50):
+        chunk = "|".join(openalex_ids[i : i + 50])
+        resp = httpx.get(
+            "https://api.openalex.org/works",
+            params={
+                "filter": f"openalex:{chunk}",
+                "per-page": 50,
+                "mailto": "contact@operon.local",
+            },
+            headers=HEADERS,
+            timeout=20.0,
+        )
+        resp.raise_for_status()
+        _parse_openalex_results(resp.json().get("results", []))
+
+    # 2. Batch par PMID numérique (si fallback NCBI/EuropePMC déclenché)
+    for i in range(0, len(pmids), 50):
+        chunk = "|".join(pmids[i : i + 50])
+        resp = httpx.get(
+            "https://api.openalex.org/works",
+            params={
+                "filter": f"pmid:{chunk}",
+                "per-page": 50,
+                "mailto": "contact@operon.local",
+            },
+            headers=HEADERS,
+            timeout=20.0,
+        )
+        resp.raise_for_status()
+        _parse_openalex_results(resp.json().get("results", []))
+
+    return articles

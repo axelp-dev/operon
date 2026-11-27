@@ -874,5 +874,59 @@
       "score": 0
     },
     "status": "rejected"
+  },
+  "18853457": {
+    "pmid": "18853457",
+    "pmcid": null,
+    "doi": "10.1002/humu.20921",
+    "title": "Updated comprehensive phylogenetic tree of global human mitochondrial DNA variation",
+    "year": 2008,
+    "abstract": "Human mitochondrial DNA is widely used as tool in many fields including evolutionary anthropology and population history, medical genetics, genetic genealogy, and forensic science. Many applications require detailed knowledge about the phylogenetic relationship of mtDNA variants. Although the phylogenetic resolution of global human mtDNA diversity has greatly improved as a result of increasing sequencing efforts of complete mtDNA genomes, an updated overall mtDNA tree is currently not available. In order to facilitate a better use of known mtDNA variation, we have constructed an updated comprehensive phylogeny of global human mtDNA variation, based on both coding- and control region mutations. This complete mtDNA tree includes previously published as well as newly identified haplogroups, is easily navigable, will be continuously and regularly updated in the future, and is online available at http://www.phylotree.org.",
+    "pdf_path": null,
+    "xml_path": null,
+    "evaluation": {
+      "reasoning": "The article discusses an updated comprehensive phylogenetic tree of global human mitochondrial DNA variation, which is relevant to human population genetics and ancestry. However, it does not specifically focus on Madagascar or the genetic origins of its population. It is more about the general use of mitochondrial DNA in various fields including anthropology, genetics, and forensic science. Therefore, the relevance to the specific research on Madagascar is limited.",
+      "keywords": [],
+      "score": 1
+    },
+    "references": [],
+    "refs_explored": false,
+    "status": "rejected"
+  },
+  "12714734": {
+    "pmid": "12714734",
+    "pmcid": null,
+    "doi": "10.1126/science.1078208",
+    "title": "Farmers and Their Languages: The First Expansions",
+    "year": 2003,
+    "abstract": "The largest movements and replacements of human populations since the end of the Ice Ages resulted from the geographically uneven rise of food production around the world. The first farming societies thereby gained great advantages over hunter-gatherer societies. But most of those resulting shifts of populations and languages are complex, controversial, or both. We discuss the main complications and specific examples involving 15 language families. Further progress will depend on interdisciplinary research that combines archaeology, crop and livestock studies, physical anthropology, genetics, and linguistics.",
+    "pdf_path": null,
+    "xml_path": null,
+    "evaluation": {
+      "reasoning": "The article discusses the complex and controversial aspects of the first expansions of farming populations and their associated languages, which is relevant to understanding human population movements and genetic origins. However, it does not directly focus on Madagascar or the specific genetic admixture of Austronesian and Bantu populations. It also does not discuss Indian Ocean migrations or use human population genomics methods. ",
+      "keywords": [],
+      "score": 1
+    },
+    "references": [],
+    "refs_explored": false,
+    "status": "rejected"
+  },
+  "17160892": {
+    "pmid": "17160892",
+    "pmcid": "1876738",
+    "doi": "10.1086/510412",
+    "title": "A Mitochondrial Stratigraphy for Island Southeast Asia",
+    "year": 2006,
+    "abstract": "",
+    "pdf_path": null,
+    "xml_path": null,
+    "evaluation": {
+      "reasoning": "bytes",
+      "keywords": [],
+      "score": 0
+    },
+    "references": [],
+    "refs_explored": false,
+    "status": "rejected"
   }
 }

@@ -460,5 +460,290 @@
       "score": 4
     },
     "status": "accepted_pending_download"
+  },
+  "25722852": {
+    "pmid": "25722852",
+    "pmcid": "4342193",
+    "doi": "10.1186/s13742-015-0047-8",
+    "title": "Second-generation PLINK: rising to the challenge of larger and richer datasets",
+    "year": 2015,
+    "abstract": "BACKGROUND: PLINK 1 is a widely used open-source C/C++ toolset for genome-wide association studies (GWAS) and research in population genetics. However, the steady accumulation of data from imputation and whole-genome sequencing studies has exposed a strong need for faster and scalable implementations of key functions, such as logistic regression, linkage disequilibrium estimation, and genomic distance evaluation. In addition, GWAS and population-genetic data now frequently contain genotype likelihoods, phase information, and/or multiallelic variants, none of which can be represented by PLINK 1's primary data format. FINDINGS: To address these issues, we are developing a second-generation codebase for PLINK. The first major release from this codebase, PLINK 1.9, introduces extensive use of bit-level parallelism, [Formula: see text]-time/constant-space Hardy-Weinberg equilibrium and Fisher's exact tests, and many other algorithmic improvements. In combination, these changes accelerate most operations by 1-4 orders of magnitude, and allow the program to handle datasets too large to fit in RAM. We have also developed an extension to the data format which adds low-overhead support for genotype likelihoods, phase, multiallelic variants, and reference vs. alternate alleles, which is the basis of our planned second release (PLINK 2.0). CONCLUSIONS: The second-generation versions of PLINK will offer dramatic improvements in performance and compatibility. For the first time, users without access to high-end computing resources can perform several essential analyses of the feature-rich and very large genetic datasets coming into use.",
+    "pdf_path": null,
+    "xml_path": null,
+    "evaluation": {
+      "reasoning": "url",
+      "keywords": [
+        "PLINK",
+        "genomic datasets",
+        "population genetics",
+        "algorithmic improvements",
+        "genotype likelihoods"
+      ],
+      "score": 3
+    },
+    "references": [],
+    "refs_explored": false,
+    "status": "accepted_pending_download"
+  },
+  "19648217": {
+    "pmid": "19648217",
+    "pmcid": "2752134",
+    "doi": "10.1101/gr.094052.109",
+    "title": "Fast model-based estimation of ancestry in unrelated individuals",
+    "year": 2009,
+    "abstract": "Population stratification has long been recognized as a confounding factor in genetic association studies. Estimated ancestries, derived from multi-locus genotype data, can be used to perform a statistical correction for population stratification. One popular technique for estimation of ancestry is the model-based approach embodied by the widely applied program structure. Another approach, implemented in the program EIGENSTRAT, relies on Principal Component Analysis rather than model-based estimation and does not directly deliver admixture fractions. EIGENSTRAT has gained in popularity in part owing to its remarkable speed in comparison to structure. We present a new algorithm and a program, ADMIXTURE, for model-based estimation of ancestry in unrelated individuals. ADMIXTURE adopts the likelihood model embedded in structure. However, ADMIXTURE runs considerably faster, solving problems in minutes that take structure hours. In many of our experiments, we have found that ADMIXTURE is almost as fast as EIGENSTRAT. The runtime improvements of ADMIXTURE rely on a fast block relaxation scheme using sequential quadratic programming for block updates, coupled with a novel quasi-Newton acceleration of convergence. Our algorithm also runs faster and with greater accuracy than the implementation of an Expectation-Maximization (EM) algorithm incorporated in the program FRAPPE. Our simulations show that ADMIXTURE's maximum likelihood estimates of the underlying admixture coefficients and ancestral allele frequencies are as accurate as structure's Bayesian estimates. On real-world data sets, ADMIXTURE's estimates are directly comparable to those from structure and EIGENSTRAT. Taken together, our results show that ADMIXTURE's computational speed opens up the possibility of using a much larger set of markers in model-based ancestry estimation and that its estimates are suitable for use in correcting for population stratification in association studies.",
+    "pdf_path": null,
+    "xml_path": null,
+    "evaluation": {
+      "reasoning": "The article discusses ADMIXTURE, a new algorithm for model-based estimation of ancestry in unrelated individuals, which is relevant to the research on human population genetics and the genetic origins of Madagascar. It introduces a faster method compared to existing techniques like structure and EIGENSTRAT, which is directly applicable to understanding human population genomics methods.",
+      "keywords": [
+        "ADMIXTURE",
+        "model-based estimation",
+        "ancestry estimation",
+        "association studies",
+        "population stratification"
+      ],
+      "score": 4
+    },
+    "references": [],
+    "refs_explored": false,
+    "status": "accepted_pending_download"
+  },
+  "17194218": {
+    "pmid": "17194218",
+    "pmcid": "1713260",
+    "doi": "10.1371/journal.pgen.0020190",
+    "title": "Population Structure and Eigenanalysis",
+    "year": 2006,
+    "abstract": "Current methods for inferring population structure from genetic data do not provide formal significance tests for population differentiation. We discuss an approach to studying population structure (principal components analysis) that was first applied to genetic data by Cavalli-Sforza and colleagues. We place the method on a solid statistical footing, using results from modern statistics to develop formal significance tests. We also uncover a general \"phase change\" phenomenon about the ability to detect structure in genetic data, which emerges from the statistical theory we use, and has an important implication for the ability to discover structure in genetic data: for a fixed but large dataset size, divergence between two populations (as measured, for example, by a statistic like FST) below a threshold is essentially undetectable, but a little above threshold, detection will be easy. This means that we can predict the dataset size needed to detect structure.",
+    "pdf_path": null,
+    "xml_path": null,
+    "evaluation": {
+      "reasoning": "The article discusses methods for studying population structure using principal components analysis and provides statistical significance tests. This is relevant to understanding genetic data and population differentiation, which are key aspects of human population genetics. However, it does not specifically focus on Madagascar or the genetic origins of its population. It is more about general methods and statistical significance in genetic data analysis.",
+      "keywords": [
+        "population structure",
+        "principal components analysis",
+        "statistical significance",
+        "genetic data"
+      ],
+      "score": 3
+    },
+    "references": [],
+    "refs_explored": false,
+    "status": "accepted_pending_download"
+  },
+  "22960212": {
+    "pmid": "22960212",
+    "pmcid": "3522152",
+    "doi": "10.1534/genetics.112.145037",
+    "title": "Ancient Admixture in Human History",
+    "year": 2012,
+    "abstract": "Population mixture is an important process in biology. We present a suite of methods for learning about population mixtures, implemented in a software package called ADMIXTOOLS, that support formal tests for whether mixture occurred and make it possible to infer proportions and dates of mixture. We also describe the development of a new single nucleotide polymorphism (SNP) array consisting of 629,433 sites with clearly documented ascertainment that was specifically designed for population genetic analyses and that we genotyped in 934 individuals from 53 diverse populations. To illustrate the methods, we give a number of examples that provide new insights about the history of human admixture. The most striking finding is a clear signal of admixture into northern Europe, with one ancestral population related to present-day Basques and Sardinians and the other related to present-day populations of northeast Asia and the Americas. This likely reflects a history of admixture between Neolithic migrants and the indigenous Mesolithic population of Europe, consistent with recent analyses of ancient bones from Sweden and the sequencing of the genome of the Tyrolean \"Iceman.\"",
+    "pdf_path": null,
+    "xml_path": null,
+    "evaluation": {
+      "reasoning": "The article discusses methods for learning about population mixtures and provides examples, including a clear signal of admixture into northern Europe. While it does not specifically focus on Madagascar or the genetic origins of its population, the methods described could be applicable to understanding human population genomics in other contexts. Therefore, it is relevant to the research project on human population genetics and the genetic origins of Madagascar.",
+      "keywords": [
+        "admixture",
+        "population genetics",
+        "SNP array",
+        "ancient bones",
+        "genetic origins"
+      ],
+      "score": 3
+    },
+    "references": [],
+    "refs_explored": false,
+    "status": "accepted_pending_download"
+  },
+  "23166502": {
+    "pmid": "23166502",
+    "pmcid": "3499260",
+    "doi": "10.1371/journal.pgen.1002967",
+    "title": "Inference of Population Splits and Mixtures from Genome-Wide Allele Frequency Data",
+    "year": 2012,
+    "abstract": "Many aspects of the historical relationships between populations in a species are reflected in genetic data. Inferring these relationships from genetic data, however, remains a challenging task. In this paper, we present a statistical model for inferring the patterns of population splits and mixtures in multiple populations. In our model, the sampled populations in a species are related to their common ancestor through a graph of ancestral populations. Using genome-wide allele frequency data and a Gaussian approximation to genetic drift, we infer the structure of this graph. We applied this method to a set of 55 human populations and a set of 82 dog breeds and wild canids. In both species, we show that a simple bifurcating tree does not fully describe the data; in contrast, we infer many migration events. While some of the migration events that we find have been detected previously, many have not. For example, in the human data, we infer that Cambodians trace approximately 16% of their ancestry to a population ancestral to other extant East Asian populations. In the dog data, we infer that both the boxer and basenji trace a considerable fraction of their ancestry (9% and 25%, respectively) to wolves subsequent to domestication and that East Asian toy breeds (the Shih Tzu and the Pekingese) result from admixture between modern toy breeds and \"ancient\" Asian breeds. Software implementing the model described here, called TreeMix, is available at http://treemix.googlecode.com.",
+    "pdf_path": null,
+    "xml_path": null,
+    "evaluation": {
+      "reasoning": "The article presents a statistical model for inferring population splits and mixtures from genome-wide allele frequency data, which is directly relevant to understanding human population genetics and admixture in Madagascar. The model is applied to both human and dog populations, providing insights into historical migration events. Given the focus on population genomics methods and the application to human populations, the relevance to the research project on Madagascar is high.",
+      "keywords": [
+        "TreeMix",
+        "population splits",
+        "mixture inference",
+        "genetic drift",
+        "human admixture"
+      ],
+      "score": 4
+    },
+    "references": [],
+    "refs_explored": false,
+    "status": "accepted_pending_download"
+  },
+  "24531965": {
+    "pmid": "24531965",
+    "pmcid": "4209567",
+    "doi": "10.1126/science.1243518",
+    "title": "A Genetic Atlas of Human Admixture History",
+    "year": 2014,
+    "abstract": "Modern genetic data combined with appropriate statistical methods have the potential to contribute substantially to our understanding of human history. We have developed an approach that exploits the genomic structure of admixed populations to date and characterize historical mixture events at fine scales. We used this to produce an atlas of worldwide human admixture history, constructed by using genetic data alone and encompassing over 100 events occurring over the past 4000 years. We identified events whose dates and participants suggest they describe genetic impacts of the Mongol empire, Arab slave trade, Bantu expansion, first millennium CE migrations in Eastern Europe, and European colonialism, as well as unrecorded events, revealing admixture to be an almost universal force shaping human populations.",
+    "pdf_path": null,
+    "xml_path": null,
+    "evaluation": {
+      "reasoning": "This article discusses methods for understanding human history through genetic data, which is relevant to the research on Madagascar's genetic origins. However, it does not specifically focus on Madagascar or the Austronesian and Bantu admixture. It also does not mention Indian Ocean migrations or Indian Ocean populations. Therefore, it is not directly applicable to the specific research on Madagascar.",
+      "keywords": [
+        "genetic atlas",
+        "admixture history",
+        "statistical methods",
+        "human history",
+        "genetic data"
+      ],
+      "score": 3
+    },
+    "references": [],
+    "refs_explored": false,
+    "status": "accepted_pending_download"
+  },
+  "15795887": {
+    "pmid": "15795887",
+    "pmcid": null,
+    "doi": "10.1002/ajpa.20188",
+    "title": "Cross-cultural estimation of the human generation interval for use in genetics-based population divergence studies",
+    "year": 2005,
+    "abstract": "The length of the human generation interval is a key parameter when using genetics to date population divergence events. However, no consensus exists regarding the generation interval length, and a wide variety of interval lengths have been used in recent studies. This makes comparison between studies difficult, and questions the accuracy of divergence date estimations. Recent genealogy-based research suggests that the male generation interval is substantially longer than the female interval, and that both are greater than the values commonly used in genetics studies. This study evaluates each of these hypotheses in a broader cross-cultural context, using data from both nation states and recent hunter-gatherer societies. Both hypotheses are supported by this study; therefore, revised estimates of male, female, and overall human generation interval lengths are proposed. The nearly universal, cross-cultural nature of the evidence justifies using these proposed estimates in Y-chromosomal, mitochondrial, and autosomal DNA-based population divergence studies.",
+    "pdf_path": null,
+    "xml_path": null,
+    "evaluation": {
+      "reasoning": "The article discusses the generation interval length in human populations, which is relevant to genetic studies of population divergence. However, it does not directly relate to the genetic origins of Madagascar or the specific admixture and migration patterns mentioned in the research project. Therefore, the relevance score is 3.",
+      "keywords": [
+        "generation interval",
+        "population divergence",
+        "genetics",
+        "cross-cultural"
+      ],
+      "score": 3
+    },
+    "references": [],
+    "refs_explored": false,
+    "status": "accepted_pending_download"
+  },
+  "23410830": {
+    "pmid": "23410830",
+    "pmcid": "3606100",
+    "doi": "10.1534/genetics.112.147330",
+    "title": "Inferring Admixture Histories of Human Populations Using Linkage Disequilibrium",
+    "year": 2013,
+    "abstract": "Long-range migrations and the resulting admixtures between populations have been important forces shaping human genetic diversity. Most existing methods for detecting and reconstructing historical admixture events are based on allele frequency divergences or patterns of ancestry segments in chromosomes of admixed individuals. An emerging new approach harnesses the exponential decay of admixture-induced linkage disequilibrium (LD) as a function of genetic distance. Here, we comprehensively develop LD-based inference into a versatile tool for investigating admixture. We present a new weighted LD statistic that can be used to infer mixture proportions as well as dates with fewer constraints on reference populations than previous methods. We define an LD-based three-population test for admixture and identify scenarios in which it can detect admixture events that previous formal tests cannot. We further show that we can uncover phylogenetic relationships among populations by comparing weighted LD curves obtained using a suite of references. Finally, we describe several improvements to the computation and fitting of weighted LD curves that greatly increase the robustness and speed of the calculations. We implement all of these advances in a software package, ALDER, which we validate in simulations and apply to test for admixture among all populations from the Human Genome Diversity Project (HGDP), highlighting insights into the admixture history of Central African Pygmies, Sardinians, and Japanese.",
+    "pdf_path": null,
+    "xml_path": null,
+    "evaluation": {
+      "reasoning": "url",
+      "keywords": [
+        "Admixture",
+        "Linkage Disequilibrium",
+        "Population Genetics",
+        "Inference Methods"
+      ],
+      "score": 3
+    },
+    "references": [],
+    "refs_explored": false,
+    "status": "accepted_pending_download"
+  },
+  "32642779": {
+    "pmid": "32642779",
+    "pmcid": null,
+    "doi": "10.1093/molbev/msaa169",
+    "title": "Recent Demographic History Inferred by High-Resolution Analysis of Linkage Disequilibrium",
+    "year": 2020,
+    "abstract": "Inferring changes in effective population size (Ne) in the recent past is of special interest for conservation of endangered species and for human history research. Current methods for estimating the very recent historical Ne are unable to detect complex demographic trajectories involving multiple episodes of bottlenecks, drops, and expansions. We develop a theoretical and computational framework to infer the demographic history of a population within the past 100 generations from the observed spectrum of linkage disequilibrium (LD) of pairs of loci over a wide range of recombination rates in a sample of contemporary individuals. The cumulative contributions of all of the previous generations to the observed LD are included in our model, and a genetic algorithm is used to search for the sequence of historical Ne values that best explains the observed LD spectrum. The method can be applied from large samples to samples of fewer than ten individuals using a variety of genotyping and DNA sequencing data: haploid, diploid with phased or unphased genotypes and pseudohaploid data from low-coverage sequencing. The method was tested by computer simulation for sensitivity to genotyping errors, temporal heterogeneity of samples, population admixture, and structural division into subpopulations, showing high tolerance to deviations from the assumptions of the model. Computer simulations also show that the proposed method outperforms other leading approaches when the inference concerns recent timeframes. Analysis of data from a variety of human and animal populations gave results in agreement with previous estimations by other methods or with records of historical events.",
+    "pdf_path": null,
+    "xml_path": null,
+    "evaluation": {
+      "reasoning": "The article discusses a method for inferring demographic history from linkage disequilibrium data, which could be relevant for understanding human population genetics, including the genetic origins of Madagascar. However, the abstract does not explicitly mention Madagascar or Austronesian/Bantu admixture. It focuses more on the method's application to various populations and its performance in detecting complex demographic trajectories. Given these points, I would rate this article a score of 3.",
+      "keywords": [
+        "demographic history",
+        "linkage disequilibrium",
+        "population genetics",
+        "genetic algorithm",
+        "human populations"
+      ],
+      "score": 3
+    },
+    "references": [],
+    "refs_explored": false,
+    "status": "accepted_pending_download"
+  },
+  "24550290": {
+    "pmid": "24550290",
+    "pmcid": "3932865",
+    "doi": "10.1073/pnas.1313787111",
+    "title": "Ancient west Eurasian ancestry in southern and eastern Africa",
+    "year": 2014,
+    "abstract": "The history of southern Africa involved interactions between indigenous hunter-gatherers and a range of populations that moved into the region. Here we use genome-wide genetic data to show that there are at least two admixture events in the history of Khoisan populations (southern African hunter-gatherers and pastoralists who speak non-Bantu languages with click consonants). One involved populations related to Niger-Congo-speaking African populations, and the other introduced ancestry most closely related to west Eurasian (European or Middle Eastern) populations. We date this latter admixture event to ∼900-1,800 y ago and show that it had the largest demographic impact in Khoisan populations that speak Khoe-Kwadi languages. A similar signal of west Eurasian ancestry is present throughout eastern Africa. In particular, we also find evidence for two admixture events in the history of Kenyan, Tanzanian, and Ethiopian populations, the earlier of which involved populations related to west Eurasians and which we date to ∼2,700-3,300 y ago. We reconstruct the allele frequencies of the putative west Eurasian population in eastern Africa and show that this population is a good proxy for the west Eurasian ancestry in southern Africa. The most parsimonious explanation for these findings is that west Eurasian ancestry entered southern Africa indirectly through eastern Africa.",
+    "pdf_path": null,
+    "xml_path": null,
+    "evaluation": {
+      "reasoning": "The article discusses ancient west Eurasian ancestry in southern and eastern Africa, involving admixture events with populations related to Niger-Congo-speaking African and west Eurasian populations. It provides dates for these admixture events and reconstructs the allele frequencies of the west Eurasian population. This aligns with the research on human population genetics and the genetic origins of Madagascar.",
+      "keywords": [
+        "west Eurasian ancestry",
+        "admixtures",
+        "southern Africa",
+        "eastern Africa",
+        "genetic data"
+      ],
+      "score": 4
+    },
+    "references": [],
+    "refs_explored": false,
+    "status": "accepted_pending_download"
+  },
+  "28716916": {
+    "pmid": "28716916",
+    "pmcid": "5559028",
+    "doi": "10.1073/pnas.1704906114",
+    "title": "Genomic landscape of human diversity across Madagascar",
+    "year": 2017,
+    "abstract": "Although situated ∼400 km from the east coast of Africa, Madagascar exhibits cultural, linguistic, and genetic traits from both Southeast Asia and Eastern Africa. The settlement history remains contentious; we therefore used a grid-based approach to sample at high resolution the genomic diversity (including maternal lineages, paternal lineages, and genome-wide data) across 257 villages and 2,704 Malagasy individuals. We find a common Bantu and Austronesian descent for all Malagasy individuals with a limited paternal contribution from Europe and the Middle East. Admixture and demographic growth happened recently, suggesting a rapid settlement of Madagascar during the last millennium. However, the distribution of African and Asian ancestry across the island reveals that the admixture was sex biased and happened heterogeneously across Madagascar, suggesting independent colonization of Madagascar from Africa and Asia rather than settlement by an already admixed population. In addition, there are geographic influences on the present genomic diversity, independent of the admixture, showing that a few centuries is sufficient to produce detectable genetic structure in human populations.",
+    "pdf_path": null,
+    "xml_path": null,
+    "evaluation": {
+      "reasoning": "{score 4}",
+      "keywords": [
+        "Madagascar",
+        "genomic diversity",
+        "Bantu",
+        "Austronesian",
+        "admixture"
+      ],
+      "score": 4
+    },
+    "references": [],
+    "refs_explored": false,
+    "status": "accepted_pending_download"
+  },
+  "24395773": {
+    "pmid": "24395773",
+    "pmcid": "3903192",
+    "doi": "10.1073/pnas.1321860111",
+    "title": "Genome-wide evidence of Austronesian–Bantu admixture and cultural reversion in a hunter-gatherer group of Madagascar",
+    "year": 2014,
+    "abstract": "Linguistic and cultural evidence suggest that Madagascar was the final point of two major dispersals of Austronesian- and Bantu-speaking populations. Today, the Mikea are described as the last-known Malagasy population reported to be still practicing a hunter-gatherer lifestyle. It is unclear, however, whether the Mikea descend from a remnant population that existed before the arrival of Austronesian and Bantu agriculturalists or whether it is only their lifestyle that separates them from the other contemporary populations of South Madagascar. To address these questions we have performed a genome-wide analysis of >700,000 SNP markers on 21 Mikea, 24 Vezo, and 24 Temoro individuals, together with 50 individuals from Bajo and Lebbo populations from Indonesia. Our analyses of these data in the context of data available from other Southeast Asian and African populations reveal that all three Malagasy populations are derived from the same admixture event involving Austronesian and Bantu sources. In contrast to the fact that most of the vocabulary of the Malagasy speakers is derived from the Barito group of the Austronesian language family, we observe that only one-third of their genetic ancestry is related to the populations of the Java-Kalimantan-Sulawesi area. Because no additional ancestry components distinctive for the Mikea were found, it is likely that they have adopted their hunter-gatherer way of life through cultural reversion, and selection signals suggest a genetic adaptation to their new lifestyle.",
+    "pdf_path": null,
+    "xml_path": null,
+    "evaluation": {
+      "reasoning": "{score}",
+      "keywords": [
+        "Austronesian",
+        "Bantu",
+        "Mikea",
+        "Malagasy",
+        "hunter-gatherer"
+      ],
+      "score": 5
+    },
+    "references": [],
+    "refs_explored": false,
+    "status": "accepted_pending_download"
   }
 }

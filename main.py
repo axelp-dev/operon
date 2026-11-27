@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from src.library.graphs import build_search_graph
+from src.library.graphs import build_search_graph, build_snowball_graph
 from src.logger import log
 
 # --- INIT LOGGER -------------------------------
@@ -10,6 +10,7 @@ log.setup(log_file=Path("data/operon.log"))
 
 # --- COMPILE & INVOKE GRAPHS -------------------------------
 
+"""
 # Build search graph
 fetch_graph = build_search_graph()
 fetch_graph.invoke(
@@ -24,5 +25,17 @@ fetch_graph.invoke(
         "rejected_articles": [],
         "n_iter": 1,
         "max_iter": 5 + 1,
+    }
+)
+"""
+
+snowball_graph = build_snowball_graph()
+snowball_graph.invoke(
+    {
+        "min_score": 3,
+        "min_refs": 2,
+        "max_selected": 15,
+        "selected_articles": [],
+        "raw_candidates": [],
     }
 )
