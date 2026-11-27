@@ -9,6 +9,7 @@
 
 ### Added
 
+- Add `matplotlib` to Python environment for benchmark plotting
 - Add benchmark script for Qwen model on articles evaluation. 
 - Implement `node_fetch_refs` for references selection in library. 
 - Implement score-fetching article on the library in `library.storage`. 

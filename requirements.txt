@@ -2,7 +2,10 @@ annotated-types==0.8.0
 anyio==4.16.0
 certifi==2026.10.23
 charset-normalizer==3.5.2
+contourpy==1.4.0
+cycler==0.12.1
 distro==1.9.0
+fonttools==4.69.1
 h11==0.16.0
 httpcore==1.0.9
 httpcore2==2.16.2
@@ -12,6 +15,7 @@ idna==3.20
 jiter==0.19.0
 jsonpatch==1.47
 jsonpointer==3.12
+kiwisolver==1.5.1
 langchain==1.5.0
 langchain-core==1.8.1
 langchain-ollama==1.1.0
@@ -22,13 +26,18 @@ langgraph-checkpoint==4.3.2
 langgraph-prebuilt==1.1.2
 langgraph-sdk==0.4.14
 langsmith==0.14.17
+matplotlib==3.11.2
+numpy==2.5.5
 ollama==0.6.3
 openai==3.52.0
 orjson==3.13.0
 ormsgpack==1.13.1
 packaging==26.3
+pillow==13.0.0
 pydantic==2.14.3
 pydantic_core==2.50.4
+pyparsing==3.3.3
+python-dateutil==4.0.0
 PyYAML==6.0.3
 regex==2026.11.15
 requests==2.34.2
@@ -39,6 +48,7 @@ tiktoken==0.14.0
 truststore==0.10.5
 typing-inspection==0.4.5
 typing_extensions==4.16.0
+tzdata==2026.6
 urllib3==2.8.0
 uuid_utils==0.19.0
 websockets==17.4
