@@ -9,6 +9,10 @@
 
 ### Added
 
+- Wire complete `build_snowball_graph()` pipeline (`fetch_refs -> filter -> read -> save_index`) sharing ingestion nodes with `build_search_graph()`.
+- Implement batch OpenAlex outbound reference extraction (`fetch_references_batch_openalex`) and mixed ID/PMID hydration (`fetch_articles_by_ids`) in `src/library/providers.py`.
+- Implement `node_fetch_refs` for co-citation ranking and candidate hydration in `src/library/nodes.py`.
+- Implement `get_min_scored_articles()` in `src/library/storage.py` using Pydantic `ArticleMeta.model_validate()`.
 - Implement `node_fetch_refs` for references selection in library. 
 - Implement score-fetching article on the library in `library.storage`. 
 - Use new `data/history.json` database for rejected articles saving. 
@@ -21,7 +25,7 @@
 
 ### Changed
 
-- Create more structured StateGraph using `FetchState` and `SnowballState` derivating from a blobal `BaseLibraryState` for snowball_graph implementation.
-- `library` architecture refactorign using `src/library` folder & dispatch `tool.py` functions into more specific files. 
+- Refactor graph states into `FetchState` and `SnowballState` inheriting from `BaseLibraryState` so ingestion nodes (`filter`, `read`, `save_index`) can be shared across independent graphs.
+- Modularize `library` package (`graphs.py`, `llm_tasks.py`, `nodes.py`, `providers.py`, `state.py`, `storage.py`).
 
 ### Fixed

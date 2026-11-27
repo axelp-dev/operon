@@ -1,14 +1,13 @@
 # Operon
 
-**Operon** is an open-source, modular muti-agent LangGtaph based system to automate scientific litterature research and experimental methodology testing. 
+**Operon** is an open-source, modular multi-agent LangGraph-based system to automate scientific literature research and experimental methodology testing.
 
 > **Current Development Scope (`library` branch):**  
-> This repository currently implements the **Bibliographic Discovery & Curation Engine** (`library` module)—an autonomous LangGraph pipeline that queries biomedical repositories, filters out off-topic organisms via local LLMs, extracts domain-specific keywords, iteratively expands Boolean queries, and builds a structured local knowledge base (`data/index.json`).
+> This repository currently implements the **Bibliographic Discovery & Curation Engine** (`library` module)—an autonomous LangGraph suite combining iterative Boolean search (`build_search_graph`) and backward co-citation snowballing (`build_snowball_graph`) to filter out off-topic organisms via local LLMs and build a structured local knowledge base (`data/index.json`).
 
 ## Key Features (Library Module)
 
-## Key Features (Library Module)
-
+- **Dual Discovery Pipelines (Search & Snowball):** Combines cyclic LLM-driven Boolean query expansion (`build_search_graph`) with co-citation reference mining (`build_snowball_graph`) to surface foundational papers cited across top-scoring articles.
 - **Multi-Provider Resilient Search:** Queries **Europe PMC**, **NCBI PubMed (E-utilities)**, and **OpenAlex** with automatic failover against HTTP `503` errors and network timeouts.
 - **Local-First Semantic Evaluation:** Uses local Ollama models (`qwen2.5:3b` / `qwen3:4b`) with Pydantic structured outputs (`ArticleEvaluation`) to score abstracts (`0–5`) and reject non-human or off-topic studies before downloading heavy full-text files.
 - **Dynamic Query Generation:** Synthesizes new broad Boolean search queries using local LLM calls grounded on top-scoring articles and extracted keywords.
@@ -63,7 +62,7 @@ pip install -r requirements.txt
 
 ## Usage
 
-Configure your seed query, iteration budget (`max_iter`), and batch size (`max_results`) in `main.py`, then run:
+Configure your seed query and iteration budget (`build_search_graph`) or co-citation thresholds (`min_score`, `min_refs`, `max_selected` in `build_snowball_graph`) in `main.py`, then run:
 
 ```bash
 python main.py
