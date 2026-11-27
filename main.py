@@ -15,7 +15,7 @@ log.setup(log_file=Path("data/operon.log"))
 fetch_graph = build_search_graph()
 fetch_graph.invoke(
     {
-        "max_results": 15,
+        "max_results": 20,
         "next_queries": [
             "(TITLE:Madagascar OR TITLE:Malagasy) AND (human OR Austronesian OR Bantu) AND (genomic OR genetic OR admixture OR ancestry)"
         ],
@@ -24,7 +24,7 @@ fetch_graph.invoke(
         "new_articles": [],
         "rejected_articles": [],
         "n_iter": 1,
-        "max_iter": 5 + 1,
+        "max_iter": 10,
     }
 )
 """

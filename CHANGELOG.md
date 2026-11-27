@@ -13,8 +13,9 @@
 - Implement batch OpenAlex outbound reference extraction (`fetch_references_batch_openalex`) and mixed ID/PMID hydration (`fetch_articles_by_ids`) in `src/library/providers.py`.
 - Implement `node_fetch_refs` for co-citation ranking and candidate hydration in `src/library/nodes.py`.
 - Implement `get_min_scored_articles()` in `src/library/storage.py` using Pydantic `ArticleMeta.model_validate()`.
-- Implement `node_fetch_refs` for references selection in library. 
-- Implement score-fetching article on the library in `library.storage`. 
+- Write benchmark plotting script using Matplotlib & PDF output from existing generated JSON benchmark file. 
+- Add `matplotlib` to Python environment for benchmark plotting
+- Add benchmark script for Qwen model on articles evaluation. 
 - Use new `data/history.json` database for rejected articles saving. 
   - Load `history.json` while filtering articles to prevent unnecessary llm calls.
   - Save `history.json` with LLM rejected articles while indexing database. 

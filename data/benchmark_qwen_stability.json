@@ -1,0 +1,2889 @@
+{
+  "n_articles": 115,
+  "n_runs": 5,
+  "threshold": 3,
+  "elapsed_seconds": 1801.9,
+  "avg_seconds_per_eval": 3.134,
+  "unanimous_decision_rate_pct": 100.0,
+  "majority_vs_disk_agreement_pct": 98.26,
+  "mean_score_std": 0.0,
+  "unstable_count": 0,
+  "unstable_articles": [],
+  "details": [
+    {
+      "pmid": "37205491",
+      "doi": "10.1101/2023.05.01.538953",
+      "title": "The landscape of tolerated genetic variation in humans and primates.",
+      "initial_label": "KEEP",
+      "initial_score": 3,
+      "scores": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "decisions": [
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP"
+      ],
+      "majority_decision": "KEEP",
+      "unanimous": true,
+      "mean_score": 3,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "41131077",
+      "doi": "10.1038/s41598-025-20856-3",
+      "title": "Leveraging known Pacific colonisation times to test models for the ancestry of Southeast Asians.",
+      "initial_label": "KEEP",
+      "initial_score": 3,
+      "scores": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "decisions": [
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP"
+      ],
+      "majority_decision": "KEEP",
+      "unanimous": true,
+      "mean_score": 3,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "42464756",
+      "doi": "10.1093/gbe/evag177",
+      "title": "Genome-Wide Diversity of Goats From Indonesia and the Philippines Reveals Local Ancestry With Different Levels of Cosmopolitan Admixture.",
+      "initial_label": "KEEP",
+      "initial_score": 3,
+      "scores": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 1,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "41606039",
+      "doi": "10.1038/s41598-026-36562-7",
+      "title": "Genome-wide analysis reveals differential admixture dynamics and historical demographic contractions in African cattle.",
+      "initial_label": "KEEP",
+      "initial_score": 3,
+      "scores": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "decisions": [
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP"
+      ],
+      "majority_decision": "KEEP",
+      "unanimous": true,
+      "mean_score": 3,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "38177203",
+      "doi": "10.1038/s41598-023-50708-x",
+      "title": "Origin and spatial population structure of Malagasy native chickens based on mitochondrial DNA.",
+      "initial_label": "KEEP",
+      "initial_score": 3,
+      "scores": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "decisions": [
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP"
+      ],
+      "majority_decision": "KEEP",
+      "unanimous": true,
+      "mean_score": 3,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "40696318",
+      "doi": "10.1186/s12915-025-02317-5",
+      "title": "Wide-scale geographical analysis of genetic ancestry in the South African Coloured population.",
+      "initial_label": "KEEP",
+      "initial_score": 3,
+      "scores": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "decisions": [
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP"
+      ],
+      "majority_decision": "KEEP",
+      "unanimous": true,
+      "mean_score": 3,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "42685213",
+      "doi": "10.1126/sciadv.adz7115",
+      "title": "Recovering the precolonial population structure of Khoe-San descendant populations.",
+      "initial_label": "KEEP",
+      "initial_score": 3,
+      "scores": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "decisions": [
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP"
+      ],
+      "majority_decision": "KEEP",
+      "unanimous": true,
+      "mean_score": 3,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "42426876",
+      "doi": "10.1186/s40246-026-00965-4",
+      "title": "Genomic reconstruction of the Pakistani Roma reveals dual South Asian ancestry, medieval bottlenecks, and the early dispersal routes of the Romani people.",
+      "initial_label": "KEEP",
+      "initial_score": 3,
+      "scores": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "decisions": [
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP"
+      ],
+      "majority_decision": "KEEP",
+      "unanimous": true,
+      "mean_score": 3,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "41940346",
+      "doi": "10.1016/j.isci.2026.115295",
+      "title": "Unscrambling the history of African indicine cattle genomes.",
+      "initial_label": "KEEP",
+      "initial_score": 3,
+      "scores": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "decisions": [
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP"
+      ],
+      "majority_decision": "KEEP",
+      "unanimous": true,
+      "mean_score": 3,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "34899843",
+      "doi": "10.3389/fgene.2021.758563",
+      "title": "Population Structure of the South West Indian Ocean Islands: Implications for Precision Medicine.",
+      "initial_label": "KEEP",
+      "initial_score": 3,
+      "scores": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "decisions": [
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP"
+      ],
+      "majority_decision": "KEEP",
+      "unanimous": true,
+      "mean_score": 3,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "40992378",
+      "doi": "10.1016/j.ajhg.2025.08.012",
+      "title": "The Indian Ocean slave trade and colonial expansion resulted in strong sex-biased admixture in South Africa.",
+      "initial_label": "KEEP",
+      "initial_score": 3,
+      "scores": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "decisions": [
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP"
+      ],
+      "majority_decision": "KEEP",
+      "unanimous": true,
+      "mean_score": 3,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "33259529",
+      "doi": "10.1371/journal.pone.0243171",
+      "title": "Geographical and social isolation drive the evolution of Austronesian languages.",
+      "initial_label": "KEEP",
+      "initial_score": 3,
+      "scores": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "decisions": [
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP"
+      ],
+      "majority_decision": "KEEP",
+      "unanimous": true,
+      "mean_score": 3,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "23526367",
+      "doi": "10.1002/ajpa.22256",
+      "title": "Indian Ocean crossroads: human genetic origin and population structure in the Maldives.",
+      "initial_label": "KEEP",
+      "initial_score": 4,
+      "scores": [
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "decisions": [
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP"
+      ],
+      "majority_decision": "KEEP",
+      "unanimous": true,
+      "mean_score": 4,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "41432001",
+      "doi": "10.1093/molbev/msaf329",
+      "title": "Insights into human history and complex traits from the genomes of African populations.",
+      "initial_label": "KEEP",
+      "initial_score": 3,
+      "scores": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "decisions": [
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP"
+      ],
+      "majority_decision": "KEEP",
+      "unanimous": true,
+      "mean_score": 3,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "42469461",
+      "doi": "10.1038/s42003-026-10683-1",
+      "title": "Ancient Mycobacterium leprae genomes reveal a potential origin and dispersal of the ancestral Branch 0.",
+      "initial_label": "KEEP",
+      "initial_score": 3,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "42596561",
+      "doi": "10.1111/mec.70507",
+      "title": "Multiple Eurasian Origins and Admixture Shaped the Genomic Legacy of the House Mouse Invasion in Africa.",
+      "initial_label": "KEEP",
+      "initial_score": 3,
+      "scores": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "decisions": [
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP"
+      ],
+      "majority_decision": "KEEP",
+      "unanimous": true,
+      "mean_score": 3,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "42099870",
+      "doi": "10.1111/eva.70248",
+      "title": "Population Genomics Reveals Genetic Diversity, Introgression, and Genetic Differentiation in Tianshan Mountains Western Honeybees (&lt;i&gt;Apis mellifera&lt;/i&gt;).",
+      "initial_label": "KEEP",
+      "initial_score": 3,
+      "scores": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "decisions": [
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP"
+      ],
+      "majority_decision": "KEEP",
+      "unanimous": true,
+      "mean_score": 3,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "40834862",
+      "doi": "10.1016/j.xgen.2025.100976",
+      "title": "The genomic history of East Asian Middle Neolithic millet- and rice-agricultural populations.",
+      "initial_label": "KEEP",
+      "initial_score": 3,
+      "scores": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "decisions": [
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP"
+      ],
+      "majority_decision": "KEEP",
+      "unanimous": true,
+      "mean_score": 3,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "36649433",
+      "doi": "10.1073/pnas.2209475119",
+      "title": "Genomic perspectives on human dispersals during the Holocene.",
+      "initial_label": "KEEP",
+      "initial_score": 3,
+      "scores": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "decisions": [
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP"
+      ],
+      "majority_decision": "KEEP",
+      "unanimous": true,
+      "mean_score": 3,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "41840917",
+      "doi": "10.1111/mec.70299",
+      "title": "Combining Population Genomics With Ancient DNA to Understand Island Colonisation History of the Madagascar Turtle Dove.",
+      "initial_label": "KEEP",
+      "initial_score": 3,
+      "scores": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "decisions": [
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP"
+      ],
+      "majority_decision": "KEEP",
+      "unanimous": true,
+      "mean_score": 3,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "42886756",
+      "doi": "10.1073/pnas.2512066123",
+      "title": "Global origins of tuna and billfish fisheries reveal the transition from coastal access to oceanic exploitation.",
+      "initial_label": "KEEP",
+      "initial_score": 3,
+      "scores": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "decisions": [
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP"
+      ],
+      "majority_decision": "KEEP",
+      "unanimous": true,
+      "mean_score": 3,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "43010077",
+      "doi": "10.1186/s13071-026-07615-7",
+      "title": "Comparative whole-genome analysis of Aedes aegypti field isolates from Southern India reveals global relatedness and localized genetic differentiation.",
+      "initial_label": "KEEP",
+      "initial_score": 3,
+      "scores": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "decisions": [
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP"
+      ],
+      "majority_decision": "KEEP",
+      "unanimous": true,
+      "mean_score": 3,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "42181241",
+      "doi": "10.1016/j.isci.2026.115974",
+      "title": "Reconstructing the west-east genetic division in Indonesia using ancient genomes.",
+      "initial_label": "KEEP",
+      "initial_score": 3,
+      "scores": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "decisions": [
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP"
+      ],
+      "majority_decision": "KEEP",
+      "unanimous": true,
+      "mean_score": 3,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "42135529",
+      "doi": "10.1093/molbev/msag105",
+      "title": "Genomic insights into the admixture history and adaptive evolution of the Zhuang people.",
+      "initial_label": "KEEP",
+      "initial_score": 3,
+      "scores": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "decisions": [
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP"
+      ],
+      "majority_decision": "KEEP",
+      "unanimous": true,
+      "mean_score": 3,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "41706841",
+      "doi": "10.1126/sciadv.ady1597",
+      "title": "Multiple southward migrations of Neolithic Chinese farmers into Southeast Asia revealed from large-scale Y-chromosome sequences.",
+      "initial_label": "KEEP",
+      "initial_score": 3,
+      "scores": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "decisions": [
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP"
+      ],
+      "majority_decision": "KEEP",
+      "unanimous": true,
+      "mean_score": 3,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "42236926",
+      "doi": "10.1038/s42003-026-10330-9",
+      "title": "Revisiting the African mtDNA landscape through complete mitochondrial genomes.",
+      "initial_label": "KEEP",
+      "initial_score": 3,
+      "scores": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "decisions": [
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP"
+      ],
+      "majority_decision": "KEEP",
+      "unanimous": true,
+      "mean_score": 3,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "42978509",
+      "doi": "10.1093/molbev/msag274",
+      "title": "Maternal genomic legacy of Altaic-speaking populations reveals broad Eurasian maternal lineage diversity with a northern East Asian connection.",
+      "initial_label": "KEEP",
+      "initial_score": 3,
+      "scores": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "decisions": [
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP"
+      ],
+      "majority_decision": "KEEP",
+      "unanimous": true,
+      "mean_score": 3,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "42826189",
+      "doi": "10.1126/sciadv.aeg8897",
+      "title": "Trans-Eurasian steppe herder and barley farmer migrations shaped paternal genomic dynamics in Northwest China and Hui evolution.",
+      "initial_label": "KEEP",
+      "initial_score": 3,
+      "scores": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "decisions": [
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP"
+      ],
+      "majority_decision": "KEEP",
+      "unanimous": true,
+      "mean_score": 3,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "41952514",
+      "doi": "10.1002/ajpa.70242",
+      "title": "Contrasting Maternal, Paternal, and Biparental Ancestry of Populations From the Caribbean Coast of Colombia.",
+      "initial_label": "KEEP",
+      "initial_score": 3,
+      "scores": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "decisions": [
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP"
+      ],
+      "majority_decision": "KEEP",
+      "unanimous": true,
+      "mean_score": 3,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "41618356",
+      "doi": "10.1186/s12915-026-02527-5",
+      "title": "Paternal genomic history and Y-chromosome phylogeny from the Chengdu Plain reveal multiple Indigenous East Asian farmer contributions to ancient Shu and their descendants.",
+      "initial_label": "KEEP",
+      "initial_score": 3,
+      "scores": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "decisions": [
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP"
+      ],
+      "majority_decision": "KEEP",
+      "unanimous": true,
+      "mean_score": 3,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "42738430",
+      "doi": "10.3390/ani16172641",
+      "title": "Inference of Genetic Structure and the Process of Population Formation in Nepalese Native Goats Using Uniparental and Genome-Wide Markers.",
+      "initial_label": "KEEP",
+      "initial_score": 3,
+      "scores": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "decisions": [
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP"
+      ],
+      "majority_decision": "KEEP",
+      "unanimous": true,
+      "mean_score": 3,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "42204004",
+      "doi": "10.1007/s00414-026-03848-4",
+      "title": "A comprehensive analysis of Y-chromosomal diversity in Colombian populations.",
+      "initial_label": "KEEP",
+      "initial_score": 3,
+      "scores": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "decisions": [
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP"
+      ],
+      "majority_decision": "KEEP",
+      "unanimous": true,
+      "mean_score": 3,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "41566624",
+      "doi": "10.1002/advs.202515930",
+      "title": "Modern and Ancient Genomes Reveal Neolithic Paternal Expansions of Millet and Rice Farmers and Demic Diffusion from China into Mainland Southeast Asia.",
+      "initial_label": "KEEP",
+      "initial_score": 3,
+      "scores": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "decisions": [
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP",
+        "KEEP"
+      ],
+      "majority_decision": "KEEP",
+      "unanimous": true,
+      "mean_score": 3,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "31398190",
+      "doi": "10.1371/journal.pntd.0007499",
+      "title": "Leptospira infection in rats: A literature review of global prevalence and distribution.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "42013123",
+      "doi": "10.1371/journal.pone.0346906",
+      "title": "Genomic analysis of putative hybrids between Potamochoerus spp. and domestic pigs from sympatric areas in West Africa and Madagascar.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "42735355",
+      "doi": "10.1051/parasite/2026044",
+      "title": "Colonisation history of a vector species of veterinary interest: phylogeography of Culicoides imicola (Diptera: Ceratopogonidae) in the Indian Ocean revealing low genetic structure.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "43043594",
+      "doi": "10.1186/s40352-026-00474-5",
+      "title": "'The vaccine is not a gris-gris, it does not come from the darkness': a qualitative study of perceptions of COVID-19 vaccination among people living in a prison of Madagascar.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "42774426",
+      "doi": "10.3389/fpubh.2026.1778275",
+      "title": "Community case study: overcoming barriers to social participation for improved local health governance in Madagascar.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "39169618",
+      "doi": "10.1016/j.xhgg.2024.100343",
+      "title": "Mid-pass whole-genome sequencing in a Malagasy cohort uncovers body composition associations.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "42827557",
+      "doi": "10.3389/frhs.2026.1910840",
+      "title": "Co-designing PROFESS: a community health worker support framework to strengthen engagement in TB and HIV care in Madagascar.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "42357246",
+      "doi": "10.3390/plants15121927",
+      "title": "New Pollen Morphological Perspectives into &lt;i&gt;Vernonia&lt;/i&gt; (Compositae-Vernonieae) from Madagascar.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "42322207",
+      "doi": "10.1080/19932820.2026.2690694",
+      "title": "Association between serum iodine and thyroid function in Malagasy adults: a cross-sectional study in a tertiary-level hospital in Antananarivo, Madagascar.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "42701535",
+      "doi": "10.7759/cureus.114048",
+      "title": "Clinical, Immunological, and Neuroimaging Characteristics and Outcome Profile of Neurocysticercosis in Children at a Neurology Department in Antananarivo: A Retrospective Observational Study.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "42464572",
+      "doi": "10.1080/19490976.2026.2701492",
+      "title": "Eukaryotic and bacterial gut communities vary along a lifestyle-associated urbanization gradient: comparative analysis of Germany and Madagascar.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "42057160",
+      "doi": "10.1186/s12985-026-03165-7",
+      "title": "Emergence of human monkeypox virus Clade Ib in Madagascar: first genomic evidence of introduction and local transmission.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "42040845",
+      "doi": "10.1002/ece3.73322",
+      "title": "Morphological Stasis in Wing Traits Despite Species Diversification in African and Malagasy &lt;i&gt;Miniopterus&lt;/i&gt; Bats.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "42471681",
+      "doi": "10.1186/s13071-026-07570-3",
+      "title": "Ticks and tick-borne diseases on southwestern Indian Ocean islands.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "42620855",
+      "doi": "10.1093/beheco/arag094",
+      "title": "Seasonal variation in trans-oceanic flight and island use in a migratory falcon.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "42026536",
+      "doi": "10.1186/s12884-026-09099-w",
+      "title": "Care trajectories of children with spinal dysraphism treated in Reunion Island between 2006 and 2024.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "43059461",
+      "doi": "10.2807/1560-7917.es.2026.31.46.2600101",
+      "title": "Incidence and case fatality of patients hospitalised with leptospirosis, overseas departments, France, 2005 to 2023.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "42612992",
+      "doi": "10.1111/jfb.70612",
+      "title": "Contrasting population genetic structures of freshwater eels (Anguilla marmorata, A. bicolor, A. mossambica) from Madagascar.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "42041919",
+      "doi": "10.3390/biology15080639",
+      "title": "Herping the African Continent: Alien Amphibians and Reptiles in Sub-Saharan Africa.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "42102143",
+      "doi": "10.1371/journal.pone.0348015",
+      "title": "A review of coral reef restoration initiatives in the Western Indian Ocean Region.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "41717538",
+      "doi": "10.1111/eva.70206",
+      "title": "Coral Genetic Structure in the Western Indian Ocean Mirrors Ocean Circulation and Thermal Stress History.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "42182813",
+      "doi": "10.3897/bdj.14.e188335",
+      "title": "First DNA barcode reference library of grasshoppers on the Comoros Archipelago.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "41787299",
+      "doi": "10.1186/s12884-026-08885-w",
+      "title": "Incidence, management, follow-up and long-term outcomes of spinal dysraphism in a cohort of diverse origins and cultures: a 17-year cohort study.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "42738587",
+      "doi": "10.3390/ani16172799",
+      "title": "Humpback Whales (&lt;i&gt;Megaptera novaeangliae&lt;/i&gt;) Feeding Along Migration Routes and Within Breeding Grounds-A Review.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "42718912",
+      "doi": "10.1002/ece3.74336",
+      "title": "Fine-Scale Population Genomics Reveals Genetic Differentiation in the Brooding Amphipod &lt;i&gt;Cheirimedon femoratus&lt;/i&gt; Across the South Shetland Islands, Antarctica.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "42971996",
+      "doi": "10.1038/s41467-026-78540-7",
+      "title": "Reply to: Evidence of widespread sequencing errors in global avian influenza study.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "42256180",
+      "doi": "10.1002/ece3.73760",
+      "title": "Seascape Connectivity Shapes Genetic and Species β-Diversity in Tropical Reef Fishes.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "40624365",
+      "doi": "10.1038/s42003-025-08276-5",
+      "title": "Genomic analysis of Plasmodium vivax field isolates circulating in sub-Saharan Africa.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "41805766",
+      "doi": "10.1371/journal.pone.0331274",
+      "title": "Baobab isotope records and rainfall forcing in Southwest Madagascar over the last 700 years.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "40768716",
+      "doi": "10.1056/NEJMoa2413772",
+      "title": "Ciprofloxacin versus Aminoglycoside-Ciprofloxacin for Bubonic Plague.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "33193983",
+      "doi": "10.11604/pamj.2020.36.329.21478",
+      "title": "[Prevalence of sickle cell trait in blood donors at the regional blood transfusion center in the Haute Matsiatra Region, Madagascar].",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "34597322",
+      "doi": "10.1371/journal.pone.0258035",
+      "title": "Hyperendemicity of cysticercosis in Madagascar: Novel insights from school children population-based antigen prevalence study.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "33244111",
+      "doi": "10.1038/s41598-020-77279-5",
+      "title": "Genetic origins and diversity of bushpigs from Madagascar (Potamochoerus larvatus, family Suidae).",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "29632623",
+      "doi": "10.11604/pamj.2018.29.1.11168",
+      "title": "[Not Available].",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "38935608",
+      "doi": "10.1371/journal.pntd.0012252",
+      "title": "Review of genotyping methods for Yersinia pestis in Madagascar.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "28221119",
+      "doi": "10.3201/eid2303.161406",
+      "title": "Pneumonic Plague Transmission, Moramanga, Madagascar, 2015.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "31538565",
+      "doi": "10.3201/eid2510.190700",
+      "title": "Sporotrichosis in the Highlands of Madagascar, 2013-20171.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "33140102",
+      "doi": "10.1093/trstmh/traa054",
+      "title": "Latent tuberculosis infection prevalence in rural Madagascar.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "33007011",
+      "doi": "10.1371/journal.pone.0240170",
+      "title": "Dialects of Madagascar.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "39086741",
+      "doi": "10.1007/s10457-024-00975-y",
+      "title": "Agroforestry in Madagascar: past, present, and future.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "32091377",
+      "doi": "10.3201/eid2603.190320",
+      "title": "Human Exposure to Hantaviruses Associated with Rodents of the Murinae Subfamily, Madagascar.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "27082106",
+      "doi": "10.1371/journal.pone.0150337",
+      "title": "Local Perspectives on Environmental Insecurity and Its Influence on Illegal Biodiversity Exploitation.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "30875372",
+      "doi": "10.1371/journal.pone.0213341",
+      "title": "Retaliatory killing and human perceptions of Madagascar's largest carnivore and livestock predator, the fosa (Cryptoprocta ferox).",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "32600414",
+      "doi": "10.1186/s12916-020-01626-6",
+      "title": "Multidrug-resistant tuberculosis surveillance and cascade of care in Madagascar: a five-year (2012-2017) retrospective study.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "29878051",
+      "doi": "10.1093/aje/kwy114",
+      "title": "Revealing Measles Outbreak Risk With a Nested Immunoglobulin G Serosurvey in Madagascar.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "42296188",
+      "doi": "10.1093/cid/ciag368",
+      "title": "Comparative Long-Term Immunogenicity and Boosting of 3-Session Versus 4-Session Intradermal Rabies Post-Exposure Prophylaxis Regimens in Cambodia and Madagascar: The RESIST-3 Study.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "33004061",
+      "doi": "10.1186/s12936-020-03417-z",
+      "title": "Malaria case management and elimination readiness in health facilities of five districts of Madagascar in 2018.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "36187658",
+      "doi": "10.3389/fpubh.2022.995788",
+      "title": "Madagascar's EPI vaccine programs: A systematic review uncovering the role of a child's sex and other barriers to vaccination.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "23082143",
+      "doi": "10.1371/journal.pone.0047129",
+      "title": "Pica and amylophagy are common among Malagasy men, women and children.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "37697804",
+      "doi": "10.7554/eLife.85867",
+      "title": "Global diversity and antimicrobial resistance of typhoid fever pathogens: Insights from a meta-analysis of 13,000 Salmonella Typhi genomes.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "36215474",
+      "doi": "10.1073/pnas.2121105119",
+      "title": "Factors influencing terrestriality in primates of the Americas and Madagascar.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "39301061",
+      "doi": "10.7717/peerj.17947",
+      "title": "Small population size and possible extirpation of the threatened Malagasy poison frog Mantella cowanii.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "42642437",
+      "doi": "10.1038/s41467-026-75954-1",
+      "title": "Characterization and evolutionary history of novel SARS-CoV-2-related viruses in bats from Cambodia.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "37395658",
+      "doi": "10.1128/spectrum.00400-23",
+      "title": "Characterization of the Environmental Plasmidome of the Red Sea.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "28950864",
+      "doi": "10.1186/s12936-017-2027-1",
+      "title": "Control of malaria in the Comoro Islands over the past century.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "27849515",
+      "doi": "10.1051/parasite/2016058",
+      "title": "Review of West Nile virus circulation and outbreak risk in Madagascar: Entomological and ornithological perspectives.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "32477280",
+      "doi": "10.3389/fmicb.2020.00711",
+      "title": "Population Genomics of Mycobacterium leprae Reveals a New Genotype in Madagascar and the Comoros.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "33355530",
+      "doi": "10.1099/mgen.0.000493",
+      "title": "Comparative genomics revealed adaptive admixture in Cryptosporidium hominis in Africa.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "39180123",
+      "doi": "10.1186/s12985-024-02471-2",
+      "title": "Detection, characterization, and phylogenetic analysis of novel astroviruses from endemic Malagasy fruit bats.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "36894632",
+      "doi": "10.1038/s41564-023-01342-w",
+      "title": "A hydrogenotrophic Sulfurimonas is globally abundant in deep-sea oxygen-saturated hydrothermal plumes.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "41078354",
+      "doi": "10.1111/mec.70134",
+      "title": "Habitat Specialisation Impacts Clownfish Demographic Resilience to Pleistocene Sea-Level Fluctuations.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "35715703",
+      "doi": "10.1038/s41396-022-01261-4",
+      "title": "Endosymbiont population genomics sheds light on transmission mode, partner specificity, and stability of the scaly-foot snail holobiont.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "35945629",
+      "doi": "10.1186/s42523-022-00198-5",
+      "title": "A framework for testing the impact of co-infections on host gut microbiomes.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "37816123",
+      "doi": "10.1093/molbev/msad225",
+      "title": "Comparative Population Transcriptomics Provide New Insight into the Evolutionary History and Adaptive Potential of World Ocean Krill.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "42003800",
+      "doi": "10.1111/mec.70349",
+      "title": "Genomic Signatures of Microgeographic Adaptation in Anopheles coluzzii Across Urban, Rural, and Forested Environments in Gabon.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "42883092",
+      "doi": "10.3390/ani16193123",
+      "title": "Genomic Insights into Inbreeding, Population Structure, and Selection Signatures in Salem Black and Global Goat Breeds.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "41465182",
+      "doi": "10.3390/genes16121510",
+      "title": "Tracing the Uncharted African Diaspora in Southern Brazil: The Genetic Legacies of Resistance in Two &lt;i&gt;Quilombos&lt;/i&gt; from Paraná.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "42472158",
+      "doi": "10.7759/cureus.111094",
+      "title": "Distribution of Hemoglobin Variants: A Retrospective Study Based on Hemoglobin Electrophoresis Results From a University Hospital in Madagascar.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "42243658",
+      "doi": "10.1186/s12864-026-13009-x",
+      "title": "Chromosome-level genome assembly of Trichiurus japonicus resolves species boundaries and evolutionary history of cutlassfishes in Northwest Pacific.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "41415321",
+      "doi": "10.1002/ece3.72665",
+      "title": "Cryptic Diversity and Genetic Differentiation of Mesophotic Hydroids in the Southwestern Indian Ocean.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "43011342",
+      "doi": "10.1111/eva.70364",
+      "title": "Editorial: Genomic Assessment of Adaptive Potential of Populations to Environmental Challenges: Applications to Management and Conservation.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "42629545",
+      "doi": "10.1002/brv.70206",
+      "title": "Land birds on atolls: diversity, origin, and function.",
+      "initial_label": "DROP",
+      "initial_score": 1,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "43034496",
+      "doi": "10.1002/ece3.74528",
+      "title": "High-Resolution Insights Into Genetic Diversity and Population Structure of &lt;i&gt;Raja clavata&lt;/i&gt; Across the Northeast Atlantic and Mediterranean Sea.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "41491664",
+      "doi": "10.1186/s12864-025-12487-9",
+      "title": "Uncovering genetic population structure in the Endangered northern rockhopper penguin (Eudyptes moseleyi) across islands in the Southern Atlantic and Indian oceans.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "42198640",
+      "doi": "10.3390/pathogens15050514",
+      "title": "Molecular Characterization of Measles and Rubella Virus Strains from the 2018-2019 Epidemic in Madagascar.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "42911920",
+      "doi": "10.1371/journal.pgph.0005797",
+      "title": "Voices from the front line: Community health workers' perspectives on effectiveness and needs in Madagascar's tuberculosis response.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "40567066",
+      "doi": "10.1080/22221751.2025.2525266",
+      "title": "2024 re-emergence of coxsackievirus A24 variant causing an outbreak of acute hemorrhagic conjunctivitis in the South West Indian Ocean.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "42564452",
+      "doi": "10.3897/zookeys.1286.196760",
+      "title": "A new and interesting earthworm species from Madagascar (Crassiclitellata, Kynotidae) with an updated key to the &lt;i&gt;Kynotus&lt;/i&gt; Michelsen, 1891 species.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "42853416",
+      "doi": "10.1007/s00439-026-02869-8",
+      "title": "Geographic barrier contributed to the diversity of maternal and paternal lineages in New Guinea Island.",
+      "initial_label": "DROP",
+      "initial_score": 1,
+      "scores": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 1,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "42828432",
+      "doi": "10.1093/gbe/evag249",
+      "title": "Genetic Basis of Social Structure in the Pastoral Nomads of Central Eurasia.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "42589112",
+      "doi": "10.3390/biology15151244",
+      "title": "Initial Genome-Wide Characterization of Turkmen Individuals from the Dashoguz Region, Turkmenistan.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    },
+    {
+      "pmid": "42787671",
+      "doi": "10.1016/j.isci.2026.117229",
+      "title": "Genome-wide evidence for the local ancestry of the Agotes from Navarra, Spain.",
+      "initial_label": "DROP",
+      "initial_score": 0,
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "decisions": [
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP",
+        "DROP"
+      ],
+      "majority_decision": "DROP",
+      "unanimous": true,
+      "mean_score": 0,
+      "std_score": 0.0
+    }
+  ]
+}

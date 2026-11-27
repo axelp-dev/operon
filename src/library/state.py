@@ -6,22 +6,22 @@ from typing import Literal, TypedDict
 
 from pydantic import BaseModel, Field
 
-
 # --- Article Evaluation -------------------------------
 
 
 class ArticleEvaluation(BaseModel):
-    reasoning: str = Field(
-        description="2-sentence analysis explaining whether the study deals with human population genetics/genomics, Madagascar/Malagasy ancestry, or relevant statistical genomics methods."
+    score: int = Field(
+        ge=0,
+        le=5,
+        description="Relevance score from 0 (unrelated/non-human) to 5 (directly studies Malagasy human population genomics).",
     )
     keywords: list[str] = Field(
         default_factory=list,
         description="3 to 5 concise English scientific keywords if relevant, otherwise empty list.",
     )
-    score: int = Field(
-        ge=0,
-        le=5,
-        description="Relevance score from 0 (unrelated/non-human) to 5 (directly studies Malagasy human population genomics).",
+    reasoning: str = Field(
+        max_length=350,
+        description="2-sentence analysis explaining whether the study deals with human population genetics/genomics, Madagascar/Malagasy ancestry, or relevant statistical genomics methods.",
     )
 
 
