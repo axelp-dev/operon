@@ -9,6 +9,7 @@
 
 ### Added
 
+- Write benchmark plotting script using Matplotlib & PDF output from existing generated JSON benchmark file. 
 - Add `matplotlib` to Python environment for benchmark plotting
 - Add benchmark script for Qwen model on articles evaluation. 
 - Implement `node_fetch_refs` for references selection in library. 

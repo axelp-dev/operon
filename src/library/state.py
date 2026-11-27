@@ -6,7 +6,6 @@ from typing import Literal, TypedDict
 
 from pydantic import BaseModel, Field
 
-
 # --- Article Evaluation -------------------------------
 
 

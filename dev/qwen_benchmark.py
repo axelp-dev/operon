@@ -1,3 +1,7 @@
+"""
+Benchmark script for Qwen model articles evaluation
+"""
+
 import json
 import statistics
 import time
@@ -7,9 +11,13 @@ from src.config import CONTEXT, DATA_DIR, HISTORY_PATH, INDEX_PATH
 from src.library.llm_tasks import parse_article
 from src.library.storage import _load_json_database
 
+# --- CONFIG -------------------------------
+
 N_RUNS = 5
 THRESHOLD = 3
 REPORT_PATH = DATA_DIR / "benchmark_qwen_stability.json"
+
+# --- HELPERS -------------------------------
 
 
 def load_full_corpus() -> list[dict]:
@@ -24,6 +32,9 @@ def load_full_corpus() -> list[dict]:
         if pmid not in index:
             corpus.append({**art, "pmid": pmid, "initial_label": "DROP"})
     return corpus
+
+
+# --- RUNNER -------------------------------
 
 
 def run_benchmark() -> None:
@@ -72,12 +83,12 @@ def run_benchmark() -> None:
 
     elapsed = time.perf_counter() - t0
 
-    # --- Métriques agrégées ---
+    # --- Agregated metrics ---
     unanimous_count = sum(1 for r in results if r["unanimous"])
     stability_rate = (unanimous_count / total) * 100 if total else 0.0
     mean_std = statistics.mean(r["std_score"] for r in results) if results else 0.0
 
-    # Accord avec la décision initiale stockée sur disque
+    # Comparison with initial decision stored on the disk
     consistent_with_disk = sum(
         1 for r in results if r["majority_decision"] == r["initial_label"]
     )
