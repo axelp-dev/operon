@@ -81,9 +81,6 @@ All graph states are immutable `TypedDict` schemas inheriting from a shared `Bas
 The `library` module exposes two independent compiled graphs in `src/library/graphs.py` that share the downstream `filter -> read -> save_index` nodes:
 
 1. **Search Graph (`build_search_graph`):** A cyclic state machine iterating across Boolean query waves until `max_iter` is reached or `next_queries` is exhausted.
-2. **Snowball Graph (`build_snowball_graph`):** A linear backward-citation expansion pipeline (`START -> fetch_refs -> filter -> read -> save_index -> END`) that mines outbound references from top-scored articles in `data/index.json`, retains co-cited foundational works, and feeds them into the standard curation pipeline.
-
-
 
 ```text
 [START]
@@ -113,6 +110,28 @@ The `library` module exposes two independent compiled graphs in `src/library/gra
 (build_queries: excl. history.json) ──[0 queries]───────┘
    │                                                    │
 [has queries] ──────────────────────────────────────────┘
+```
+
+
+2. **Snowball Graph (`build_snowball_graph`):** A linear backward-citation expansion pipeline (`START -> fetch_refs -> filter -> read -> save_index -> END`) that mines outbound references from top-scored articles in `data/index.json`, retains co-cited foundational works, and feeds them into the standard curation pipeline.
+
+```text
+[START]
+   │
+   ▼
+(fetch_refs: index.json [score >= min_score] -> OpenAlex batch -> hydrate [refs >= min_refs])
+   │
+   ▼
+(filter: excl. index.json + history.json)
+   │
+   ▼
+(read: LLM parse_article)
+   │
+   ▼
+(save_index: index.json + history.json)
+   │
+   ▼
+ [END]
 ```
 
 ### Nodes (`src/library/nodes.py`)
